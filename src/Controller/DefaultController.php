@@ -19,16 +19,4 @@ class DefaultController extends AbstractController
 
         return $this->render('base.html.twig');
     }
-
-    /**
-     * @Route("/pizzas", name="pizzas_list")
-     */
-    public function pizzasAction()
-    {
-        return $this->render('pizzas.html.twig', [
-            'pizzas' => [
-                '4 fromages', 'Reine', 'Paysanne'
-            ]
-        ]);
-    }
 }
