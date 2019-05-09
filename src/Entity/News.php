@@ -47,7 +47,7 @@ class News
     private $Date;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\User", inversedBy="news", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="news", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $Author;
