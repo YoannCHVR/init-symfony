@@ -44,7 +44,7 @@ class News
     /**
      * @ORM\Column(type="date")
      */
-    private $Date;
+    private $PublishedAt;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="news", cascade={"persist", "remove"})
@@ -117,14 +117,14 @@ class News
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getPublishedAt(): ?\DateTimeInterface
     {
-        return $this->Date;
+        return $this->PublishedAt;
     }
 
-    public function setDate(\DateTimeInterface $Date): self
+    public function setPublishedAt(\DateTimeInterface $PublishedAt): self
     {
-        $this->Date = $Date;
+        $this->PublishedAt = $PublishedAt;
 
         return $this;
     }

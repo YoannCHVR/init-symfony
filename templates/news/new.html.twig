@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  New article
+{% endblock %}
+
+{% block body %}
+
+  <!-- Header with background image -->
+  <header id="bg-about" class="bg-section container-fluid">
+    <div class="row">
+      <!-- Content -->
+      <div class="container py-header-section">
+        <div class="row">
+          <!-- Responsive col -->
+          <div class="col-10 col-lg-8 mx-auto ">
+            <!-- Header text -->
+            <p class="bg-title text-center text-white">
+              Créer un nouvel article
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <main>
+    <!-- News section -->
+    <div class="container py-section">
+      <!--FORM-->
+      {{ include('news/_form.html.twig') }}
+      <!--End FORM-->
+    </div>
+    <!-- End News section -->
+  </main>
+{% endblock %}
