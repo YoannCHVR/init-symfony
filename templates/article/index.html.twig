@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-  News
+  Article
 {% endblock %}
 
 {% block body %}
@@ -26,15 +26,15 @@
   <!-- End Header -->
 
   <main>
-    <!-- News section -->
+    <!-- Articles section -->
     <div class="container py-section">
 
-      {% for new in news %}
+      {% for article in articles %}
         <!-- First article -->
         <div class="row article-container">
           <!-- Article image -->
           <div class="col-10 col-md-4 mx-auto">
-            <img class="w-100 imgscale" src="assets/img/articles/{{ new.image }}" alt="">
+            <img class="w-100 imgscale" src="assets/img/articles/{{ article.image }}" alt="">
           </div>
 
           <!-- Article informations -->
@@ -42,18 +42,18 @@
             <div>
               <!-- Article title and link -->
               <h6 class="title-3 color-2">
-                {{ new.title }}
+                {{ article.title }}
               </h6>
 
               <!-- Article synop. -->
               <p class="mt-3" align="justify">
-                {{ new.content }}
+                {{ article.content }}
               </p>
             </div>
 
             <!-- Article Author -->
             <span class="bg-secondary text-white p-2 mt-3">
-              {{ new.publishedAt|date('Y/m/d') }}
+              {{ article.publishedAt|date('Y/m/d') }}
             </span>
           </div>
 
@@ -63,6 +63,6 @@
       {% endfor %}
 
     </div>
-    <!-- End News section -->
+    <!-- End Articles section -->
   </main>
 {% endblock %}

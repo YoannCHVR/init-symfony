@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\News;
+use App\Entity\Article;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -11,11 +11,11 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class NewsType extends AbstractType
+class ArticleType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        // Builder New News Form
+        // Builder New Article Form
         $builder
             // Image Field
              ->add('image', FileType::class, [
@@ -44,7 +44,7 @@ class NewsType extends AbstractType
     {
         $resolver->setDefaults([
             // Configure your form options here
-            'data_class' => News::class,
+            'data_class' => Article::class,
         ]);
     }
 }

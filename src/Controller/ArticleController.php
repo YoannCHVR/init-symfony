@@ -2,10 +2,10 @@
 
 namespace App\Controller;
 
-use App\Entity\News;
+use App\Entity\Article;
 use App\Entity\User;
 
-use App\Form\NewsType;
+use App\Form\ArticleType;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -13,27 +13,27 @@ use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-class NewsController extends AbstractController
+class ArticleController extends AbstractController
 {
     /**
-     * @Route("/news", name="news_list")
+     * @Route("/article", name="article_list")
      */
     public function index()
     {
         $em = $this->getDoctrine()->getManager();
-        $news = $em->getRepository(News::class)->findAll();
+        $articles = $em->getRepository(Article::class)->findAll();
 
-        return $this->render('news/index.html.twig', [
-          'news' => $news
+        return $this->render('article/index.html.twig', [
+          'articles' => $articles
         ]);
     }
 
     /**
-     * @Route("/news/new", name="news_creation")
+     * @Route("/article/new", name="article_creation")
      */
     public function new(Request $request)
     {
-        $news = new News();
+        $article = new Article();
         $currentDate = new \DateTime();
 
         $em = $this->getDoctrine()->getManager();
@@ -42,24 +42,24 @@ class NewsController extends AbstractController
         ]);
 
         // Create form
-        $form = $this->createForm(NewsType::class, $news);
+        $form = $this->createForm(ArticleType::class, $article);
 
         // Create request
         $form->handleRequest($request);
 
         // After Submit and Valid form
         if ($form->isSubmitted() && $form->isValid()) {
-          $news->setAuthor($author);
-          $news->setPublishedAt($currentDate);
+          $article->setAuthor($author);
+          $article->setPublishedAt($currentDate);
 
-          $em->persist($news);
+          $em->persist($article);
           $em->flush();
 
           // Return to home page
-          return $this->redirectToRoute('news_list');
+          return $this->redirectToRoute('article_list');
         }
 
-        return $this->render('news/new.html.twig', [
+        return $this->render('article/new.html.twig', [
             'form' => $form->createView(),
         ]);
     }

@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\NewsRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
  */
-class News
+class Article
 {
     /**
      * @ORM\Id()
@@ -47,7 +47,7 @@ class News
     private $PublishedAt;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="news", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="article", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $Author;

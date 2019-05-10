@@ -32,9 +32,9 @@ class User
     private $Admin;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\News", mappedBy="Author", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Entity\Article", mappedBy="Author", cascade={"persist", "remove"})
      */
-    private $news;
+    private $article;
 
     public function getId(): ?int
     {
@@ -77,18 +77,18 @@ class User
         return $this;
     }
 
-    public function getNews(): ?News
+    public function getArticle(): ?Article
     {
-        return $this->news;
+        return $this->article;
     }
 
-    public function setNews(News $news): self
+    public function setArticle(Article $article): self
     {
-        $this->news = $news;
+        $this->article = $article;
 
         // set the owning side of the relation if necessary
-        if ($this !== $news->getAuthor()) {
-            $news->setAuthor($this);
+        if ($this !== $article->getAuthor()) {
+            $article->setAuthor($this);
         }
 
         return $this;
