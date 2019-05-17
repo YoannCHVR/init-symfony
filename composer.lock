@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cc1d26bdbfebb7f7a656430ef21ab7d0",
+    "content-hash": "a0dc0e27f27411bcb3eb1573fb028339",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1902,7 +1902,7 @@
         },
         {
             "name": "symfony/config",
-            "version": "v4.2.7",
+            "version": "v4.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
