@@ -1,0 +1,274 @@
+{# HEADER / FOOTER #}
+{% extends 'base.html.twig' %}
+
+{# Title Page #}
+{% block title %}
+  Simulateur
+{% endblock %}
+
+{# CSS : Individual Page #}
+{% block stylesheets %}{% endblock %}
+
+{# JS : Individual Page #}
+{% block javascripts %}
+  <script src="{{ asset('assets/js/vue.js') }}"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+{% endblock %}
+
+{# BODY : Individual Page #}
+{% block body %}
+  <!-- Header with background image -->
+  <header id="bg-contact" class="bg-section container-fluid">
+    <div class="row">
+      <!-- Content -->
+      <div class="container py-header-section">
+        <div class="row">
+          <!-- Responsive col -->
+          <div class="col-10 col-lg-8 mx-auto">
+            <!-- Header text -->
+            <p class="bg-title text-center text-white m-0">
+              {{ 'simulation.index.header.title1'|trans }}
+            </p>
+            <p class="text-center mt-4 main-title">
+                {{ 'simulation.index.header.title2'|trans }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <main id="simulation">
+    <!-- Content with section padding top/bottom -->
+    <div class="container py-section">
+      <!-- Section Title -->
+      <h3 class="title-1 text-left mb-4">
+        <span class="underline underline-secondary">
+          {{ 'simulation.index.simulation.title'|trans }}
+        </span>
+      </h3>
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <p class="col-12 col-lg-10 p-0 pl-lg-3 mb-5 mb-lg-0" align="justify">
+            <b>
+              {{ 'simulation.index.simulation.intro1.title'|trans }}
+            </b><br>
+            {{ 'simulation.index.simulation.intro1.content'|trans }}
+            <br><br>
+            <b>
+              {{ 'simulation.index.simulation.intro2.title'|trans }}
+            </b><br>
+            {{ 'simulation.index.simulation.intro2.content'|trans }}
+            <br>
+          </p>
+        </div>
+        <!-- Form -->
+        {{ include('simulation/_form.html.twig') }}
+        <!-- End Form -->
+      </div>
+    </div>
+
+    <!-- Section with background image -->
+    <div id="bg-simulation" class="bg-section container-fluid">
+      <div class="row">
+        <!-- Content -->
+        <div class="container">
+          <div class="row py-section">
+            <!-- Responsive col -->
+            <div class="col-10 mx-auto text-center">
+              <!-- Text section -->
+              <p class="text-white title-2 mb-0">
+                Votre temps passé à créer de la valeur ajoutée est estimé à
+                <b>${ Around(AddedValue, 0) }%</b>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-section">
+      <div class="row pb-0">
+        <!-- Section Title -->
+        <h3 class="title-1 text-left mb-5 mx-auto d-none d-lg-block">
+          <span class="underline underline-secondary">
+            Estimation de votre situation
+          </span>
+        </h3>
+
+        <table class="table my-4 w-75 mx-auto">
+          <tbody>
+            <tr>
+              <th scope="col" style="vertical-align: middle; text-align: center" colspan="2">Taux</th>
+              <!--<th scope="col" colspan="2" rowspan="2" style="vertical-align: middle; text-align: center">Valeur ajoutée</th> -->
+              <th v-if="AddedValue" colspan="2" rowspan="4" style="vertical-align: middle; text-align: center">
+                Temps à valeur ajoutée
+                <br>
+                <br>
+                ${ Truncate(AddedValue, 1) }
+                %</th>
+              <th v-else="v-else" colspan="2" rowspan="4" style="vertical-align: middle; text-align: center">Temps à valeur ajoutée
+                <br><br>
+                Inconnu</th>
+            </tr>
+            <tr>
+              <th scope="row">Disponibilité</th>
+              <td v-if="TauxDispo">${ Around((TauxDispo), 1) }
+                %</td>
+              <td v-else="v-else">Inconnu</td>
+            </tr>
+            <tr>
+              <th scope="row">Performance</th>
+              <td v-if="TauxPerf">${ Around((TauxPerf), 1) }
+                %</td>
+              <td v-else="v-else">Inconnu</td>
+            </tr>
+            <tr>
+              <th scope="row">Qualité</th>
+              <td v-if="TauxQuality">${ Around(TauxQuality, 1) }
+                %</td>
+              <td v-else="v-else">Inconnu</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="chart-area" class="row align-items-center">
+        <div class="col-12 col-md-10 col-lg-8 col-xl-6 mx-auto mx-xl-0 text-center">
+          <br>
+          <h6 style="color: rgba(8, 41, 71, 1); font-weight: bold; font-size: 22px;">
+            Découpage de votre activité (% temps)</h6>
+          <reactive-stacked-bar-chart class="mx-auto" style="height: 500px;" :stack_bar_chart="stack_bar_chart"></reactive-stacked-bar-chart>
+          <table>
+            <tr>
+              <td style="background: rgba(15, 112, 63, 1); color: white;">&nbsp;</td>
+              <td v-if="PerteInex">${ Truncate(PerteInex, 1) }&nbsp;%</td>
+              <td v-else="v-else">Inconnu</td>
+            </tr>
+
+            <tr>
+              <td style="background: rgba(41, 183, 116, 1); color: black;">&nbsp;</td>
+              <td v-if="PerteQuality">${ Truncate(PerteQuality, 1) }&nbsp;%</td>
+              <td v-else="v-else">Inconnu</td>
+            </tr>
+
+            <tr>
+              <td style="background: rgba(187, 210, 225, 1); color: white;">&nbsp;</td>
+              <td v-if="PertePerfs">${ Truncate(PertePerfs, 1) }&nbsp;%</td>
+              <td v-else="v-else">Inconnu</td>
+            </tr>
+
+            <tr>
+              <td style="background: rgba(55, 128, 191, 1); color: white;">&nbsp;</td>
+              <td v-if="PerteArrets">${ Truncate(PerteArrets, 1) }&nbsp;%</td>
+              <td v-else="v-else">Inconnu</td>
+            </tr>
+
+            <tr>
+              <td style="background: rgba(8, 41, 71, 1); color: white;">&nbsp;</td>
+              <td v-if="AddedValue">${ Truncate(AddedValue, 1) }&nbsp;%</td>
+              <td v-else="v-else">Inconnu</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="col-12 col-md-10 col-lg-8 col-xl-6 mx-auto mx-xl-0 text-center">
+          <a href="#bg-pdf">
+            <img class="w-50" src="assets/img/icons/Sauv-PDF.png" alt=""/></a>
+        </div>
+
+        <div class="col-12 col-md-10 col-lg-8 col-xl-6 mx-auto mx-xl-0 text-center">
+          <br>
+          <h6 style="color: rgba(8, 41, 71, 1); font-weight: bold; font-size: 22px;">
+            Economies estimées en diminuant vos pertes</h6>
+          <reactive-dual-line-chart class="mx-auto" style="height: 500px;" :dual_line_chart="dual_line_chart"></reactive-dual-line-chart>
+        </div>
+        <div class="col-12 col-md-10 col-lg-8 col-xl-6 mx-auto mx-xl-0 text-center">
+          <br>
+          <h6 style="color: rgba(8, 41, 71, 1); font-weight: bold; font-size: 22px;">
+            Gain de CA potentiel</h6>
+          <reactive-dual-line-chart2 class="mx-auto" style="height: 500px;" :dual_line_chart2="dual_line_chart2"></reactive-dual-line-chart2>
+        </div>
+      </div>
+    </div>
+
+    <!-- Keep in touch section -->
+    <div id="bg-pdf" class="container-fluid bg-section">
+      <div class="row">
+        <!-- Dual container to keep the content in the center and the background on all of the width page -->
+        <div class="container">
+          <div class="row py-section flex-column">
+            <!-- Responsive col -->
+            <div class="col-10 col-lg-12 mx-auto">
+              <!-- Text content -->
+              <p class="bg-section-text-footer text-center text-white mb-4">
+                Envie de recevoir le compte rendu par mail ?
+              </p>
+
+              <div class="row">
+                <div class="col-12 col-lg-8 mx-auto text-center text-lg-left">
+                  <!-- NbDayWork and WorkRotation -->
+                  <div class="form-row align-items-center justify-content-lg-start justify-content-center">
+                    <!-- Number Day Worked section -->
+                    <div class="form-group col-10 col-md-4 mb-lg-0">
+                      <input type="email" class="form-control" name="anonymeEmail" v-model="anonymeEmail" placeholder="Email *" required="required">
+                    </div>
+
+                    <!-- Work Rotation section -->
+                    <div class="form-group col-10 col-md-4 mb-lg-0">
+                      <input type="text" class="form-control" name="anonymeCompany" v-model="anonymeCompany" placeholder="Entreprise">
+                    </div>
+
+                    <!-- Button submit -->
+                    <div class="form-group col-10 col-md-6 col-lg-4 mb-lg-0">
+                      <button class="btn btn-secondary text-white w-100" type="submit" @click="exportPdf()">
+                        Recevoir le PDF
+                      </button>
+                    </div>
+                  </div>
+                  <span class="legend-text text-white">* Les données collectées servent à la génération de votre pdf.</span>
+                </div>
+              </div>
+
+              <div class="col-10 col-lg-8 mx-auto text-center">
+                <p class="bg-section-text-footer text-center text-white mb-4">
+                  <br><br>Des explications ? Une analyse plus détaillée ?
+                </p>
+                <a class="mx-auto btn btn-secondary" href="{{ path('contact') }}">
+                  Contactez-nous
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Keep in touch section -->
+  </main>
+  <!-- End Main -->
+
+  <script type="text/javascript">
+    var radioButtonNbWorkDay = document.querySelectorAll(".radio_dayWork input");
+
+    radioButtonNbWorkDay.forEach(function(element, index) {
+      element.setAttribute('v-model', 'form.nbDayWork');
+    });
+  </script>
+
+  <script type="text/javascript">
+    var defaultValueSelector = document.querySelector("#simulation_workRotation");
+    var defaultValueTrans = document.querySelector("#simulation_workRotation").parentNode.childNodes[5].outerText;
+
+    var newDefaultOption = document.createElement("option");
+    newDefaultOption.setAttribute('disabled', '');
+    newDefaultOption.setAttribute('value', ' ');
+    newDefaultOption.append(defaultValueTrans);
+
+    defaultValueSelector.insertBefore(newDefaultOption, defaultValueSelector.firstChild);
+  </script>
+
+  <script src="{{ asset('assets/js/vue-module/simulation.js') }}"></script>
+
+{% endblock %}

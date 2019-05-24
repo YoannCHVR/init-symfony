@@ -305,12 +305,6 @@ footer div div:last-child p {
 
 /* ------- header content  ------- */
 
-header .main-content {
-  /* height: calc(75% - 104px); */
-
-  height: 100%;
-}
-
 header .main-title {
   color: white;
   font-size: 2rem;
@@ -812,5 +806,5 @@ main .article h5 {
     url('../img/backgrounds/tbdb.jpg');
 }
 /* ------ background separation page accueil ----- */
-#bg-sep {  
+#bg-sep {
 	background-image: -webkit-linear-gradient(left, rgba(8, 41, 71, 0.8) 20%, rgba(39, 183, 116, 0.8)),    url('../img/backgrounds/fond-sep.jpg');  background-image: -o-linear-gradient(left, rgba(8, 41, 71, 0.8) 20%, rgba(39, 183, 116, 0.8)),    url('../img/backgrounds/fond-sep.jpg');  background-image: linear-gradient(to right, rgba(8, 41, 71, 0.8) 20%, rgba(39, 183, 116, 0.8)),    url('../img/backgrounds/fond-sep.jpg');}

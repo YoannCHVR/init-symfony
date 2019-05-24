@@ -1,0 +1,159 @@
+{# HEADER / FOOTER #}
+{% extends 'base.html.twig' %}
+
+{# Title Page #}
+{% block title %}
+  Contactez-nous
+{% endblock %}
+
+{# CSS : Individual Page #}
+{% block stylesheets %}
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+{% endblock %}
+
+{# JS : Individual Page #}
+{% block javascripts %}
+<script type="text/javascript">
+  var onloadCallback = function() {
+    grecaptcha.render('google_captcha', {
+      'sitekey' : '6Lf2G6QUAAAAAA1E5ns9TKaML0ViZJJe9gOF7ywq'
+    });
+  };
+</script>
+{% endblock %}
+
+{# BODY : Individual Page #}
+{% block body %}
+
+<!-- Header with background image -->
+<header id="bg-contact" class="bg-section container-fluid">
+  <div class="row">
+    <!-- Content -->
+    <div class="container py-header-section">
+      <div class="row">
+        <!-- Responsive col -->
+        <div class="col-10 col-lg-8 mx-auto">
+          <!-- Header text -->
+          <p class="bg-title text-center text-white m-0">
+            Vous avez un projet, et vous aimeriez en parler avec nous ?
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- End Header -->
+
+<!-- Main -->
+<main>
+  <!-- Content with section padding top/bottom -->
+  <div class="container py-section">
+    <div class="row">
+      <!-- Form -->
+      {{ include('contact/_form.html.twig') }}
+      <!-- End Form -->
+
+      <!-- Contact section -->
+      <div class="col ml-0 ml-lg-3 mt-5 mt-lg-0">
+        <!-- Contact title -->
+        <h3>
+          <span class="underline underline-secondary">
+            Nos coordonnées
+          </span>
+        </h3>
+
+        <!-- Contact informations : part 1 -->
+        <div class="row">
+          <!-- Address -->
+          <div class="col-12 col-md-6">
+            <!-- Address title -->
+            <h5 class="color-2 title-3 my-3">
+              <i class="mr-1 fas fa-map-marker-alt"></i>
+              Adresse
+            </h5>
+
+            <!-- Address content -->
+            <p class="px-3 my-3">
+              Pépinière Newton
+              <br>
+              213 Cours Victor Hugo
+              <br>
+              33130 Bègles
+            </p>
+          </div>
+
+          <!-- Phone -->
+          <div class="col-12 col-md-6">
+            <!-- Phone title -->
+            <h5 class="color-2 title-3 my-3">
+              <i class="mr-1 fas fa-mobile-alt"></i>
+              Téléphone
+            </h5>
+
+            <!-- Phone content -->
+            <p class="px-3 my-3">
+              +33 (0)6 35 53 50 13
+            </p>
+          </div>
+        </div>
+
+        <!-- Contact informations : part 2 -->
+        <div class="row">
+          <!-- Email -->
+          <div class="col-12 col-md-10">
+            <!-- Email title -->
+            <h5 class="color-2 title-3 my-3">
+              <i class="mr-1 far fa-envelope"></i>
+              Email
+            </h5>
+
+            <!-- Email content -->
+            <p class="px-3 my-3">
+              <a href="mailto:contact@kipers-industries.com?body=Please, right here your message to Kipers">
+                contact@kipers-industries.com
+              </a>
+            </p>
+          </div>
+
+          <!-- Schedules -->
+          <!-- <div class="col-12 col-md-6"> -->
+          <!-- Schedules title -->
+          <!-- <h5 class="color-2 title-3 my-3"> <i class="mr-1 far fa-clock"></i> Horaires </h5> -->
+
+          <!-- Schedules content -->
+          <!-- <p class="px-3 my-3"> 8h - 18h du lundi au jeudi <br> 8h - 14h vendredi </p> </div> -->
+        </div>
+
+        <!-- Follow us section -->
+        <div>
+          <!-- Follow us title -->
+          <!-- <h3> <span class="underline underline-secondary"> Suivez notre actualité </span> </h3> -->
+
+          <!-- Follow us content -->
+          <!-- <div class="row"> <div class="col"> </div> </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kipers Localisation -->
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Map -->
+      <iframe
+        width="100%"
+        height="400"
+        src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;q=213%20Cours%20Victor%20Hugo+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"></iframe>
+    </div>
+  </div>
+</main>
+
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+  async defer>
+</script>
+
+{% endblock %}

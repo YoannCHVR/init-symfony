@@ -1,0 +1,49 @@
+{# HEADER / FOOTER #}
+{% extends 'base.html.twig' %}
+
+{# Title Page #}
+{% block title %}
+  Message envoyé | Contactez-nous
+{% endblock %}
+
+{# CSS : Individual Page #}
+{% block stylesheets %}{% endblock %}
+
+{# JS : Individual Page #}
+{% block javascripts %}{% endblock %}
+
+{# BODY : Individual Page #}
+{% block body %}
+
+  <!-- Header with background image -->
+  <header id="bg-about" class="bg-section container-fluid">
+    <div class="row">
+      <!-- Content -->
+      <div class="container py-header-section">
+        <div class="row">
+          <!-- Responsive col -->
+          <div class="col-10 col-lg-8 mx-auto ">
+            <!-- Header text -->
+            <p class="bg-title text-center text-white">
+              Votre message n'a pas pu être envoyé
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <section>
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-sm-12 text-center padding-bottom ">
+          <div class="p-3">Vous n'avez pas valider la sécurité (CAPTCHA) du formulaire de contact.<br><br>
+            <a href="{{ path('contact') }}">Veuillez retourner sur la page du formulaire</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

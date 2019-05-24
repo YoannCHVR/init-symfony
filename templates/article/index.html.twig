@@ -1,68 +1,77 @@
+{# HEADER / FOOTER #}
 {% extends 'base.html.twig' %}
 
+{# Title Page #}
 {% block title %}
-  Article
+  Contactez-nous
 {% endblock %}
 
+{# CSS : Individual Page #}
+{% block stylesheets %}{% endblock %}
+
+{# JS : Individual Page #}
+{% block javascripts %}{% endblock %}
+
+{# BODY : Individual Page #}
 {% block body %}
 
-  <!-- Header with background image -->
-  <header id="bg-about" class="bg-section container-fluid">
-    <div class="row">
-      <!-- Content -->
-      <div class="container py-header-section">
-        <div class="row">
-          <!-- Responsive col -->
-          <div class="col-10 col-lg-8 mx-auto ">
-            <!-- Header text -->
-            <p class="bg-title text-center text-white">
-              Actualités
-            </p>
-          </div>
+<!-- Header with background image -->
+<header id="bg-about" class="bg-section container-fluid">
+  <div class="row">
+    <!-- Content -->
+    <div class="container py-header-section">
+      <div class="row">
+        <!-- Responsive col -->
+        <div class="col-10 col-lg-8 mx-auto ">
+          <!-- Header text -->
+          <p class="bg-title text-center text-white">
+            Actualités
+          </p>
         </div>
       </div>
     </div>
-  </header>
-  <!-- End Header -->
+  </div>
+</header>
+<!-- End Header -->
 
-  <main>
-    <!-- Articles section -->
-    <div class="container py-section">
-
-      {% for article in articles %}
-        <!-- First article -->
-        <div class="row article-container">
-          <!-- Article image -->
-          <div class="col-10 col-md-4 mx-auto">
-            <img class="w-100 imgscale" src="assets/img/articles/{{ article.image }}" alt="">
-          </div>
-
-          <!-- Article informations -->
-          <div id="airbus" class="col-10 col-md-8 mx-auto mt-3 mt-md-0 d-flex flex-column align-items-end">
-            <div>
-              <!-- Article title and link -->
-              <h6 class="title-3 color-2">
-                {{ article.title }}
-              </h6>
-
-              <!-- Article synop. -->
-              <p class="mt-3" align="justify">
-                {{ article.content }}
-              </p>
-            </div>
-
-            <!-- Article Author -->
-            <span class="bg-secondary text-white p-2 mt-3">
-              {{ article.publishedAt|date('Y/m/d') }}
-            </span>
-          </div>
-
-          <!-- Splitter -->
-          <hr class="w-100 my-5">
+<main>
+  <!-- News section -->
+  <div class="container py-section">
+    {{ 'symfony.great'|trans }}
+    {% for article in articles %}
+      <!-- Article -->
+      <div class="row article-container">
+        <!-- Article image -->
+        <div class="col-10 col-md-4 mx-auto">
+          <img class="w-100 imgscale" src="{{ asset('assets/img/articles/' ~ article.image) }}" alt="">
         </div>
-      {% endfor %}
 
-    </div>
-    <!-- End Articles section -->
-  </main>
+        <!-- Article informations -->
+        <div id="agriinno" class="col-10 col-md-8 mx-auto mt-3 mt-md-0 d-flex flex-column align-items-end">
+          <div>
+            <!-- Article title and link -->
+            <h6 class="title-3 color-2">
+              {{ article.title }}
+            </h6>
+
+            <!-- Article synop. -->
+            <p class="mt-3" align="justify">
+              {{ article.content }}
+            </p>
+          </div>
+
+          <!-- Article Author -->
+          <span class="bg-secondary text-white p-2 mt-3">
+            {{ article.publishedAt|date("d/m/Y")  }}
+          </span>
+        </div>
+
+        <!-- Splitter -->
+        <hr class="w-100 my-5">
+      </div>
+    {% endfor %}
+  </div>
+  <!-- End News section -->
+</main>
+
 {% endblock %}

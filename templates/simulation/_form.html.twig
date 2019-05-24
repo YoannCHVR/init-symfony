@@ -1,0 +1,208 @@
+{# templates/simulation/index.html.twig #}
+
+<!-- FORM -->
+{{ form_start(form,
+    {'attr': {
+      'id': 'test',
+      'class': 'col-12 col-lg-6'
+      }
+    })
+}}
+
+  <!-- NbDayWork -->
+  <div class="form-row">
+    <!-- Number Day Worked section -->
+    <div class="form-group col-md-12">
+      {{ form_label(form.nbDayWork,
+          'simulation.form.field1.label',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed lastname errors #}
+      {{ form_errors(form.nbDayWork) }}
+      {# Lastname Input #}
+      {{ form_widget(form.nbDayWork,
+          {'attr': {
+            'class': 'radio_dayWork'
+            }
+          }
+        )
+      }}
+
+      <div class="d-block d-md-inline d-lg-block d-xl-inline ml-0 ml-md-3 ml-lg-0 ml-xl-3">
+        <input type="radio" name="other" v-if="form.nbDayWork" checked>
+        <input type="radio" name="other" v-else>
+        <label for="other">{{ 'simulation.form.field1.more'|trans }}
+          <input type="number" class="form-control w-75 d-inline" min="0" max="365" v-model="form.nbDayWork" placeholder="{{ 'simulation.form.field1.placeholder'|trans }}">
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- WorkRotation and RateQuality -->
+  <div class="form-row">
+    <!-- Work Rotation section -->
+    <div class="form-group col-md-6">
+      {{ form_label(form.workRotation,
+          'simulation.form.field2.label',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed lastname errors #}
+      {{ form_errors(form.workRotation) }}
+      {# Lastname Input #}
+      {{ form_widget(form.workRotation,
+          {'attr': {
+            'class': 'form-control',
+            'v-model': 'form.workRotation'
+            }
+          }
+        )
+      }}
+      <span class="d-none">{{ 'simulation.form.field2.placeholder'|trans }}</span>
+    </div>
+
+    <!-- Rate Quality section -->
+    <div class="form-group col-md-6">
+      {{ form_label(form.rateQuality,
+          'Taux de qualité (en %)',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed rate quality errors #}
+      {{ form_errors(form.rateQuality) }}
+      {# Rate Quality Input #}
+      {{ form_widget(form.rateQuality,
+          {'attr': {
+            'class': 'form-control',
+            'v-model': 'form.rateQuality',
+            'placeholder': 'Taux de qualité (en %)'
+            }
+          }
+        )
+      }}
+    </div>
+  </div>
+
+  <!-- Planned Downtime and WorkRotation -->
+  <div class="form-row">
+    <!-- Planned Downtine section -->
+    <div class="form-group col-md-6">
+      {{ form_label(form.plannedDowntime,
+          'Arrêts planifiés (jours/an)',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed rate quality errors #}
+      {{ form_errors(form.plannedDowntime) }}
+      {# Rate Quality Input #}
+      {{ form_widget(form.plannedDowntime,
+          {'attr': {
+            'class': 'form-control',
+            'v-model' : 'form.plannedDowntime',
+            'placeholder': 'Arrêts planifiés (jours/an)'
+            }
+          }
+        )
+      }}
+    </div>
+
+    <!-- Unplanned Downtime section -->
+    <div class="form-group col-md-6">
+      {{ form_label(form.unplannedDowntime,
+          'Arrêts non-planifiés (jours/an)',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed rate quality errors #}
+      {{ form_errors(form.unplannedDowntime) }}
+      {# Rate Quality Input #}
+      {{ form_widget(form.unplannedDowntime,
+          {'attr': {
+            'class': 'form-control',
+            'v-model' : 'form.unplannedDowntime',
+            'placeholder': 'Arrêts non-planifiés (jours/an)'
+            }
+          }
+        )
+      }}
+    </div>
+  </div>
+
+  <!-- Nominal Cadence -->
+  <div class="form-row">
+    <!-- Nominal Cadence section -->
+    <div class="form-group col-md-12">
+      {{ form_label(form.nominalCadence,
+          'Cadence nominale de la ligne (unités/heure)',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed rate quality errors #}
+      {{ form_errors(form.nominalCadence) }}
+
+      <div class="d-flex align-items-center">
+        {# Rate Quality Input #}
+        {{ form_widget(form.nominalCadence,
+            {'attr': {
+              'class': 'custom-range w-75',
+              'v-model' : 'form.nominalCadence'
+              }
+            }
+          )
+        }}
+        <input type="number" class="ml-3 form-control w-50" name="nominalCadence" v-model="form.nominalCadence">
+      </div>
+    </div>
+  </div>
+
+  <!-- Real Cadence -->
+  <div class="form-row">
+    <!-- Real Cadence section -->
+    <div class="form-group col-md-12">
+      {{ form_label(form.realCadence,
+          'Cadence réelle de la ligne (unités/heure)',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed rate quality errors #}
+      {{ form_errors(form.realCadence) }}
+
+      <div class="d-flex align-items-center">
+        {# Rate Quality Input #}
+        {{ form_widget(form.realCadence,
+            {'attr': {
+              'class': 'custom-range w-75',
+              'v-model' : 'form.realCadence'
+              }
+            }
+          )
+        }}
+        <input type="number" class="ml-3 form-control w-50" name="realCadence" v-model="form.realCadence">
+      </div>
+    </div>
+  </div>
+
+{{ form_end(form) }}
+<!-- End FORM -->
