@@ -1,0 +1,689 @@
+{# HEADER / FOOTER #}
+{% extends 'base.html.twig' %}
+
+{# Title Page #}
+{% block title %}
+  Notre Société
+{% endblock %}
+
+{# CSS : Individual Page #}
+{% block stylesheets %}{% endblock %}
+
+{# JS : Individual Page #}
+{% block javascripts %}{% endblock %}
+
+{# BODY : Individual Page #}
+{% block body %}
+
+<!-- idée: background image de la pépinière / laboratoire / start-up -->
+<!-- Header with background image -->
+<header id="bg-about-pep" class="bg-section container-fluid">
+  <div class="row">
+    <!-- Content -->
+    <div class="container py-header-section">
+      <div class="row">
+        <!-- Responsive col -->
+        <div class="col-10 col-lg-8 mx-auto ">
+          <!-- Header text -->
+          <p class="bg-title text-center text-white">
+            Une expertise au service des PME
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- End Header -->
+
+<!-- Main -->
+<main class="p-0">
+  <!-- Expertise section -->
+  <div class="container py-section">
+    <div class="row">
+      <!-- Expertise illustration -->
+      <div class="col-12 col-lg-6">
+        <div class="row justify-content-center">
+          <div class="image-effect">
+            <img class="w-100" src="assets/img/kipers_property/livre.jpg" alt=""/>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="col-8 col-lg-6 mx-auto mt-5 mt-lg-0"> <div class="row flex-column align-items-start align-items-lg-end text-left text-lg-right"> <div class="col-12 col-lg-12"> <!-- Expertise Title -->
+      <!-- <h3 class="title-1 text-left text-lg-right"> <span class="underline underline-secondary"> <!-- 15 ans d'expérience en Prognostics and Health Management -->
+      <!-- De la recherche à la TPE </span> </h3> </div> <div class="col-12 col-lg-12"> <!-- Text of Expertise presentation (simple text) -->
+      <!-- <p class="text-left text-lg-right"> <b>Pourquoi développer des solutions d'optimisation industrielle avancées, si les entreprises ne peuvent en bénéficier ?</b><br><br> C'est la question que se sont posés les fondateurs de Kipers Industries
+      avant de quitter leur laboratoire de recherche (Institut Femto-st sous la tutelle de l'ENSMM) afin de lancer dans l'aventure entreprenariale.<br><br> Après plus d'une décennie de travail sur la thématique du Prognostics and Health Management (PHM), à
+      développer des solutions d'analyse de données, de suivi d'état de santé et de pronostic de durées de vie résiduelle des équipements industriels, il était temps de permettre aux industriels de bénéficier de ces avancées. <br><br> Attirés par les
+      entreprises mélant savoir-faire et forte tendance à l'innovation, et mûs par l'envie d'amener ses nouvelles solutions aux TPE/PME, c'est donc naturellement que le développement d'une offre pour l'embouteillage du vin et des boissons s'est imposée aux
+      fondateurs. </p> </div> </div> </div> -->
+
+      <div class="col-8 col-lg-6 mx-auto mt-5 mt-lg-0">
+        <div class="row flex-column align-items-start align-items-lg-end text-left text-lg-right">
+          <div class="col-12 col-lg-12">
+            <!-- Expertise Title -->
+            <h3 class="title-1 text-left text-lg-right">
+              <span class="underline underline-secondary">
+                <!-- 15 ans d'expérience en Prognostics and Health Management -->
+                De la recherche à l’aventure entrepreneuriale
+              </span>
+            </h3>
+          </div>
+          <div class="col-12 col-lg-12">
+            <!-- Text of Expertise presentation (simple text) -->
+            <p class="text-left text-lg-right">
+              <br>
+              Issus de l’institut FEMTO-ST (ENSMM / UFC / UTBM / CNRS), les cofondateurs de Kipers Industries (Rafael Gouriveau et Marine Jouin) comptent
+              <b>plus d’une dizaine d’années de recherche</b>
+              en PHM (Prognostics and Health Management). Le temps et l’énergie leurs ont permis d’acquérir une certaine maturité, et de prendre la mesure de cette discipline dont le caractère finalisé ne peut être éludé : développer des
+              <b>solutions d’anticipation des performances</b>
+              (analyse de données, suivi de l’état de santé, pronostic de défaillances, etc.) n’a de sens que si
+              <b>des industriels en bénéficient</b>. Cela a motivé leur souhait de créer la société Kipers Industries dans laquelle ils trouvent une nouvelle forme de satisfaction (valoriser des travaux scientifiques trop hermétiques à la réalité terrain).<br>
+              Inspirés par les entreprises associant
+              <b>savoir-faire et innovation</b>, et attentifs au
+              <b>tissu industriel des TPE/PME</b>, c'est tout naturellement que le développement d'une offre pour
+              <b>l'embouteillage et l'industrie agroalimentaire</b>
+              s'est imposé à eux.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Section with background image -->
+  <div id="bg-pepiniere" class="bg-section container-fluid">
+    <div class="row">
+      <!-- Content -->
+      <div class="container">
+        <div class="row py-section flex-column">
+          <!-- Responsive col -->
+          <div class="col-10 col-lg-6 mx-auto mx-md-0">
+            <!-- Section text (it talks about working environment) -->
+            <p class="text-left content-section text-white m-0">
+              Déterminés à mettre leur expertise en gestion de production et de maintenance au service des PME, et convaincus de la valeur des techniques d'analyse de données pour les process agroalimentaires, Rafael Gouriveau et Marine Jouin créent Kipers
+              Industries en novembre 2017.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Team section -->
+  <div class="container py-5">
+    <div class="row mb-5">
+      <!-- Team Title -->
+      <h3 class="title-1 mx-auto">
+        <span class="underline underline-secondary">
+          Équipe
+        </span>
+      </h3>
+    </div>
+
+    <!-- Team members -->
+    <div class="row justify-content-center justify-content-sm-start">
+      <!-- Member 1 -->
+      <div class="col-8 col-sm-6 col-md-4 col-lg-3 my-3">
+        <div class="member-card text-center p-3">
+          <!-- Member face image -->
+          <div class="mx-auto">
+            <img class="w-100" src="assets/img/equipe/rg.jpg" alt="">
+          </div>
+
+          <!-- Membre name -->
+          <h5 class="m-0 mt-3">
+            Dr. Rafael
+            <span class="text-uppercase">Gouriveau</span>
+          </h5>
+
+          <!-- Enterprise position -->
+          <h6 class="m-0 mt-3">
+            CEO - Fondateur
+          </h6>
+
+          <!-- Member description (academic background) -->
+          <p class="m-0 mt-3">
+            Enseignant-chercheur en génie industriel et PHM
+          </p>
+
+          <!-- Social networks -->
+          <ul class="d-flex justify-content-center p-0 m-0 mt-3">
+            <!-- Linkedin -->
+            <a class="mx-3" href="https://www.linkedin.com/in/rafael-gouriveau-18a95530/" target="_blank">
+              <li class="list-unstyled">
+                <img src="assets/img/rs/linkedin.svg" alt="">
+              </li>
+            </a>
+
+            <!-- Twitter -->
+            <!-- <a class="mx-3" href="#"> <li class="list-unstyled"> <img src="assets/img/rs/twitter.svg" alt=""> </li> </a> -->
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-8 col-sm-6 col-md-4 col-lg-3 my-3">
+        <div class="member-card text-center p-3">
+          <!-- Member face image -->
+          <div class="mx-auto">
+            <img class="w-100" src="assets/img/equipe/mj.jpg" alt="">
+          </div>
+
+          <!-- Membre name -->
+          <h5 class="m-0 mt-3">
+            Dr. Marine
+            <span class="text-uppercase">Jouin</span>
+          </h5>
+
+          <!-- Enterprise position -->
+          <h6 class="m-0 mt-3">
+            CTO - Fondatrice
+          </h6>
+
+          <!-- Member description (academic background) -->
+          <p class="m-0 mt-3">
+            Docteur - ingénieur en Prognostics & Health Management
+          </p>
+
+          <!-- Social networks -->
+          <ul class="d-flex justify-content-center p-0 m-0 mt-3">
+            <!-- Linkedin -->
+            <a class="mx-3" href="https://www.linkedin.com/in/marine-jouin-27181a116/" target="_blank">
+              <li class="list-unstyled">
+                <img src="assets/img/rs/linkedin.svg" alt="">
+              </li>
+            </a>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-8 col-sm-6 col-md-4 col-lg-3 my-3">
+        <div class="member-card text-center p-3">
+          <!-- Member face image -->
+          <div class="mx-auto">
+            <img class="w-100" src="assets/img/equipe/fm.jpg" alt="">
+          </div>
+
+          <!-- Membre name -->
+          <h5 class="m-0 mt-3">
+            Florian
+            <span class="text-uppercase">Marris</span>
+          </h5>
+
+          <!-- Enterprise position -->
+          <h6 class="m-0 mt-3">
+            Stagiaire R&D
+          </h6>
+
+          <!-- Member description (academic background) -->
+          <p class="m-0 mt-3">
+            Étudiant ingénieur - spécialité informatique - ENSEIRB
+          </p>
+
+          <!-- Social networks -->
+          <ul class="d-flex justify-content-center p-0 m-0 mt-3">
+            <!-- Linkedin -->
+            <a class="mx-3" href="https://www.linkedin.com/in/florian-marris/" target="_blank">
+              <li class="list-unstyled">
+                <img src="assets/img/rs/linkedin.svg" alt="">
+              </li>
+            </a>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-8 col-sm-6 col-md-4 col-lg-3 my-3">
+        <div class="member-card text-center p-3">
+          <!-- Member face image -->
+          <div class="mx-auto">
+            <img class="w-100" src="assets/img/equipe/db.png" alt="">
+          </div>
+
+          <!-- Membre name -->
+          <h5 class="m-0 mt-3">
+            Dylan
+            <span class="text-uppercase">Blanc</span>
+          </h5>
+
+          <!-- Enterprise position -->
+          <h6 class="m-0 mt-3">
+            Stagiaire marketing & commercial
+          </h6>
+
+          <!-- Member description (academic background) -->
+          <p class="m-0 mt-3">
+            Etudiant en marketing et communication - ISEG
+          </p>
+
+          <!-- Social networks -->
+          <ul class="d-flex justify-content-center p-0 m-0 mt-3">
+            <!-- Linkedin -->
+            <a class="mx-3" href="https://www.linkedin.com/in/dylan-blanc-897217161/" target="_blank">
+              <li class="list-unstyled">
+                <img src="assets/img/rs/linkedin.svg" alt="Logo Linkedin">
+              </li>
+            </a>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-8 col-sm-6 col-md-4 col-lg-3 my-3">
+        <div class="member-card text-center p-3">
+          <!-- Member face image -->
+          <div class="mx-auto">
+            <img class="w-100" src="assets/img/equipe/yc.png" alt="">
+          </div>
+
+          <!-- Membre name -->
+          <h5 class="m-0 mt-3">
+            Yoann
+            <span class="text-uppercase">CHEVESSIER</span>
+          </h5>
+
+          <!-- Enterprise position -->
+          <h6 class="m-0 mt-3">
+            Stagiaire R&D
+          </h6>
+
+          <!-- Member description (academic background) -->
+          <p class="m-0 mt-3">
+            Étudiant en LP - Développeur d'applications web
+          </p>
+
+          <!-- Social networks -->
+          <ul class="d-flex justify-content-center p-0 m-0 mt-3">
+            <!-- Linkedin -->
+            <a class="mx-3" href="https://www.linkedin.com/in/yoannchevessier/" target="_blank">
+              <li class="list-unstyled">
+                <img src="assets/img/rs/linkedin.svg" alt="">
+              </li>
+            </a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Previous membres section -->
+  <div class="container py-5 d-none">
+    <div class="row mb-5">
+      <!-- Previous membres Title -->
+      <h3 class="title-1 color-2 mx-auto">
+        <span class="underline underline-secondary">
+          Anciens membres
+        </span>
+      </h3>
+    </div>
+
+    <!-- Membres section -->
+    <div class="row">
+      <div class="top-content w-100">
+        <div class="container-fluid">
+          <!-- Slider -->
+          <div id="carousel-example" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner row w-100 mx-auto" role="listbox">
+              <!-- Member 1 -->
+              <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
+                <div class="model-item">
+                  <!-- Member Face Image -->
+                  <img class="img-fluid mx-auto d-block" src="assets/img/faces/Portraits-Kipers-Industries-1.jpg" alt="">
+
+                  <!-- Member Informations -->
+                  <div class="item-informations">
+                    <!-- Member Name -->
+                    <h5>
+                      Marine
+                      <span class="text-uppercase">Jouin</span>
+                    </h5>
+
+                    <!-- Member Social Networks -->
+                    <ul class="d-flex justify-content-center p-0 m-0">
+
+                      <!-- Linkedin -->
+                      <li class="list-unstyled mx-2">
+                        <a href="#">
+                          <img src="assets/img/rs/linkedin.svg" alt="">
+                        </a>
+                      </li>
+
+                      <!-- Twitter -->
+                      <li class="list-unstyled mx-2">
+                        <a href="#">
+                          <img src="assets/img/rs/twitter.svg" alt="">
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Member 2 -->
+              <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
+                <div class="model-item">
+                  <!-- Member Face Image -->
+                  <img class="img-fluid mx-auto d-block" src="assets/img/faces/Portraits-Kipers-Industries-1.jpg" alt="">
+
+                  <!-- Member Informations -->
+                  <div class="item-informations">
+                    <!-- Member Name -->
+                    <h5>
+                      Marine
+                      <span class="text-uppercase">Jouin</span>
+                    </h5>
+
+                    <!-- Member Social Networks -->
+                    <ul class="d-flex justify-content-center p-0 m-0">
+
+                      <!-- Linkedin -->
+                      <li class="list-unstyled mx-2">
+                        <a href="#">
+                          <img src="assets/img/rs/linkedin.svg" alt="">
+                        </a>
+                      </li>
+
+                      <!-- Twitter -->
+                      <li class="list-unstyled mx-2">
+                        <a href="#">
+                          <img src="assets/img/rs/twitter.svg" alt="">
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Member 3 -->
+              <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
+                <div class="model-item">
+                  <!-- Member Face Image -->
+                  <img class="img-fluid mx-auto d-block" src="assets/img/faces/Portraits-Kipers-Industries-1.jpg" alt="">
+
+                  <!-- Member Informations -->
+                  <div class="item-informations">
+                    <!-- Member Name -->
+                    <h5>
+                      Marine
+                      <span class="text-uppercase">Jouin</span>
+                    </h5>
+
+                    <!-- Member Social Networks -->
+                    <ul class="d-flex justify-content-center p-0 m-0">
+
+                      <!-- Linkedin -->
+                      <li class="list-unstyled mx-2">
+                        <a href="#">
+                          <img src="assets/img/rs/linkedin.svg" alt="">
+                        </a>
+                      </li>
+
+                      <!-- Twitter -->
+                      <li class="list-unstyled mx-2">
+                        <a href="#">
+                          <img src="assets/img/rs/twitter.svg" alt="">
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Member 4 -->
+              <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
+                <div class="model-item">
+                  <!-- Member Face Image -->
+                  <img class="img-fluid mx-auto d-block" src="assets/img/faces/Portraits-Kipers-Industries-1.jpg" alt="">
+
+                  <!-- Member Informations -->
+                  <div class="item-informations">
+                    <!-- Member Name -->
+                    <h5>
+                      Marine
+                      <span class="text-uppercase">Jouin</span>
+                    </h5>
+
+                    <!-- Member Social Networks -->
+                    <ul class="d-flex justify-content-center p-0 m-0">
+
+                      <!-- Linkedin -->
+                      <li class="list-unstyled mx-2">
+                        <a href="#">
+                          <img src="assets/img/rs/linkedin.svg" alt="">
+                        </a>
+                      </li>
+
+                      <!-- Twitter -->
+                      <li class="list-unstyled mx-2">
+                        <a href="#">
+                          <img src="assets/img/rs/twitter.svg" alt="">
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Member 5 -->
+              <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
+                <div class="model-item">
+                  <!-- Member Face Image -->
+                  <img class="img-fluid mx-auto d-block" src="assets/img/faces/Portraits-Kipers-Industries-1.jpg" alt="">
+
+                  <!-- Member Informations -->
+                  <div class="item-informations">
+                    <!-- Member Name -->
+                    <h5>
+                      Marine
+                      <span class="text-uppercase">Jouin</span>
+                    </h5>
+
+                    <!-- Member Social Networks -->
+                    <ul class="d-flex justify-content-center p-0 m-0">
+
+                      <!-- Linkedin -->
+                      <li class="list-unstyled mx-2">
+                        <a href="#">
+                          <img src="assets/img/rs/linkedin.svg" alt="">
+                        </a>
+                      </li>
+
+                      <!-- Twitter -->
+                      <li class="list-unstyled mx-2">
+                        <a href="#">
+                          <img src="assets/img/rs/twitter.svg" alt="">
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Member 6 -->
+              <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
+                <div class="model-item">
+                  <!-- Member Face Image -->
+                  <img class="img-fluid mx-auto d-block" src="assets/img/faces/Portraits-Kipers-Industries-1.jpg" alt="">
+
+                  <!-- Member Informations -->
+                  <div class="item-informations">
+                    <!-- Member Name -->
+                    <h5>
+                      Marine
+                      <span class="text-uppercase">Jouin</span>
+                    </h5>
+
+                    <!-- Member Social Networks -->
+                    <ul class="d-flex justify-content-center p-0 m-0">
+
+                      <!-- Linkedin -->
+                      <li class="list-unstyled mx-2">
+                        <a href="#">
+                          <img src="assets/img/rs/linkedin.svg" alt="">
+                        </a>
+                      </li>
+
+                      <!-- Twitter -->
+                      <li class="list-unstyled mx-2">
+                        <a href="#">
+                          <img src="assets/img/rs/twitter.svg" alt="">
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Left Switch Slider -->
+            <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <!-- For Accessibility-->
+              <span class="sr-only">
+                Previous
+              </span>
+            </a>
+
+            <!-- Right Switch Slider -->
+            <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <!-- For Accessibility-->
+              <span class="sr-only">
+                Next
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Transition section with background image -->
+  <div id="bg-pepiniere" class="bg-section container-fluid">
+    <div class="row">
+      <div class="container">
+        <div class="row py-section"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Partners section -->
+  <div class="container py-5">
+    <div class="row mb-5">
+      <!-- Solution Title -->
+      <h3 class="title-1 mx-auto">
+        <span class="underline underline-secondary">
+          Partenaires
+        </span>
+      </h3>
+    </div>
+
+    <!-- Partners -->
+    <div class="row">
+
+      <!-- Partner 1 -->
+      <a href="http://www.technostart.fr/" class="col-12 col-sm-6 col-md-4 col-lg-3" target="_blank">
+        <div class="h-100 row justify-content-center align-items-center">
+          <img src="assets/img/partners/techstart.png">
+        </div>
+      </a>
+
+      <!-- Partner 2 -->
+      <a href="http://it-translation.fr/" class="col-12 col-sm-6 col-md-4 col-lg-3" target="_blank">
+        <div class="h-100 row justify-content-center align-items-center">
+          <img src="assets/img/partners/it2.png">
+        </div>
+      </a>
+
+      <!-- Partner 3-->
+      <a href="https://www.ens2m.fr/" class="col-12 col-sm-6 col-md-4 col-lg-3" target="_blank">
+        <div class="h-100 row justify-content-center align-items-center">
+          <img src="assets/img/partners/ensmm.png">
+        </div>
+      </a>
+
+      <!-- Partner 4 -->
+      <a href="https://www.femto-st.fr/fr" class="col-12 col-sm-6 col-md-4 col-lg-3" target="_blank">
+        <div class="h-100 row justify-content-center align-items-center">
+          <img src="assets/img/partners/femto.png" width="200">
+        </div>
+      </a>
+
+      <!-- Partner 5 -->
+      <a href="https://www.airbus.com/" class="col-12 col-sm-6 col-md-4 col-lg-3" target="_blank">
+        <div class="h-100 row justify-content-center align-items-center">
+          <img src="assets/img/partners/airbus.svg" width="300">
+        </div>
+      </a>
+
+      <!-- Partner 6 -->
+      <a href="https://technowest.com/" class="col-12 col-sm-6 col-md-4 col-lg-3" target="_blank">
+        <div class="h-100 row justify-content-center align-items-center">
+          <img src="assets/img/partners/technowest.png">
+        </div>
+      </a>
+
+      <!-- Partner 7 -->
+      <a href="https://www.nouvelle-aquitaine.fr/" class="col-12 col-sm-6 col-md-4 col-lg-3" target="_blank">
+        <div class="h-100 row justify-content-center align-items-center">
+          <img src="assets/img/partners/region.png">
+        </div>
+      </a>
+
+      <!-- Partner 8 -->
+      <a href="http://www.aquiti.fr/" class="col-12 col-sm-6 col-md-4 col-lg-3" target="_blank">
+        <div class="h-100 row justify-content-center align-items-center">
+          <img src="assets/img/partners/Aquiti.jpg" width="200">
+        </div>
+      </a>
+
+      <!-- Partner 9 -->
+      <a href="https://www.lafrenchtech.com/fr/" class="col-12 col-sm-6 col-md-4 col-lg-3" target="_blank">
+        <div class="h-100 row justify-content-center align-items-center">
+          <img src="assets/img/partners/logo-frenchtech.png" width="200">
+        </div>
+      </a>
+
+      <!-- Partner 10 -->
+      <a href="https://www.captronic.fr/" class="col-12 col-sm-6 col-md-4 col-lg-3" target="_blank">
+        <div class="h-100 row justify-content-center align-items-center">
+          <img src="assets/img/partners/captronic.png">
+        </div>
+      </a>
+
+      <!-- Partner 11 -->
+      <a class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="h-100 row justify-content-center align-items-center">
+          <img src="assets/img/partners/ira.png">
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Keep in touch section -->
+  <div id="bg-keepTouch" class="container-fluid bg-section">
+    <div class="row">
+      <!-- Dual container to keep the content in the center and the background on all of the width page -->
+      <div class="container">
+        <div class="row py-section flex-column">
+          <!-- Responsive col -->
+          <div class="col-10 col-lg-8 mx-auto text-center">
+            <!-- Text content -->
+            <p class="bg-section-text-footer text-center text-white mb-4">
+              Vous souhaitez faire partie de l'aventure ?
+            </p>
+
+            <!-- Link to the jobs page -->
+            <a class="mx-auto btn btn-secondary" href="https://kipers-industries.welcomekit.co/" target="_blank">
+              Rejoignez-nous !
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Keep in touch section -->
+</main>
+<!-- End Main -->
+
+{% endblock %}

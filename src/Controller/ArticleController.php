@@ -6,22 +6,30 @@ use App\Entity\Article;
 use App\Entity\User;
 
 use App\Form\ArticleType;
-
+use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
-use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/{_locale}")
+ */
 class ArticleController extends AbstractController
 {
     /**
      * @Route("/article", name="article_list")
      */
-    public function index()
+    public function index(TranslatorInterface $translator)
     {
+        $translated = $translator->trans('symfony.great');
+
+        echo $translated;
+
         $em = $this->getDoctrine()->getManager();
-        $articles = $em->getRepository(Article::class)->findAll();
+        $articles = $em->getRepository(Article::class)->findBy(
+          [],
+          ['PublishedAt'=> 'DESC']
+        );
 
         return $this->render('article/index.html.twig', [
           'articles' => $articles

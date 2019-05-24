@@ -1,0 +1,181 @@
+{# templates/contact/index.html.twig #}
+
+<!-- FORM -->
+{{ form_start(form,
+    {'attr': {
+      'class': 'col-12 col-lg-6'
+      }
+    })
+}}
+
+  <!-- LASTNAME & FIRSTNAME -->
+  <div class="form-row">
+    <!-- Lastname section -->
+    <div class="form-group col-md-6">
+      <!-- LASTNAME -->
+      {# Lastname label #}
+      {{ form_label(form.lastname,
+          'Nom *',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed lastname errors #}
+      {{ form_errors(form.lastname) }}
+      {# Lastname Input #}
+      {{ form_widget(form.lastname,
+          {'attr': {
+            'class': 'form-control',
+            'placeholder': 'Nom'
+            }
+          }
+        )
+      }}
+    </div>
+
+    <!-- firstname section -->
+    <div class="form-group col-md-6">
+      <!-- FIRSTNAME -->
+      {# Firstname label #}
+      {{ form_label(form.firstname,
+          'Prénom',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed lastname errors #}
+      {{ form_errors(form.firstname) }}
+      {# Firstname Input #}
+      {{ form_widget(form.firstname,
+          {'attr': {
+            'class': 'form-control',
+            'placeholder': 'Prénom'
+            }
+          }
+        )
+      }}
+    </div>
+  </div>
+
+  <!-- EMAIL & COMPANY -->
+  <div class="form-row">
+    <!-- Email section -->
+    <div class="form-group col-md-6">
+      <!-- Email -->
+      {# Email label #}
+      {{ form_label(form.email,
+          'E-mail *',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed email errors #}
+      {{ form_errors(form.email) }}
+      {# Email Input #}
+      {{ form_widget(form.email,
+          {'attr': {
+            'class': 'form-control',
+            'placeholder': 'Email'
+            }
+          }
+        )
+      }}
+    </div>
+
+    <!-- company section -->
+    <div class="form-group col-md-6">
+      <!-- COMPANY -->
+      {# Company label #}
+      {{ form_label(form.company,
+          'Entreprise *',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed company errors #}
+      {{ form_errors(form.company) }}
+      {# Company Input #}
+      {{ form_widget(form.company,
+          {'attr': {
+            'class': 'form-control',
+            'placeholder': 'Entreprise'
+            }
+          }
+        )
+      }}
+    </div>
+  </div>
+
+  <!-- Message -->
+  <div class="form-row">
+    <!-- Message section -->
+    <div class="form-group col-md-12">
+      <!-- MESSAGE -->
+      {# Message label #}
+      {{ form_label(form.message,
+          'Votre message *',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed message errors #}
+      {{ form_errors(form.message) }}
+      {# Message Input #}
+      {{ form_widget(form.message,
+          {'attr': {
+            'class': 'form-control',
+            'placeholder': 'Votre message',
+            'rows' : '8',
+            'cols' : '80'
+            }
+          }
+        )
+      }}
+    </div>
+  </div>
+
+  <!-- File -->
+  <div class="form-row d-none">
+    <!-- File section -->
+    <div class="form-group col-md-12">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <!-- Before text -->
+          <span class="input-group-text">
+            Upload
+          </span>
+        </div>
+        <!-- File input -->
+        <div class="custom-file">
+          <label class="custom-file-label" for="file">
+            Choisir un fichier
+          </label>
+          <input type="file" class="custom-file-input" name="file">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Captcha GOOGLE -->
+  <div id="google_captcha" class="mb-3" data-sitekey="6Lf2G6QUAAAAAA1E5ns9TKaML0ViZJJe9gOF7ywq" data-callback="onSuccess"></div>
+
+  {# Submit button #}
+  <div class="form-row">
+    <div class="form-group col-12 mb-0">
+      <button class="btn btn-primary" type="submit">
+        Envoyer
+      </button>
+    </div>
+  </div>
+{{ form_end(form) }}
+<!-- End FORM -->

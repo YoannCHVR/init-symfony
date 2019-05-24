@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- TITLE PAGE -->
     <title>
-      {% block title %}{% endblock %} | Kipers Industries - Le Prognostics & Health Management au service des industriels
+      {% block title %}{% endblock %}
+      | Kipers Industries - Le Prognostics & Health Management au service des industriels
     </title>
-    {% block stylesheets %}
-      <!-- CSS -->
-      <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-      <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
-      <!-- CSS : Cookie Consent -->
-      <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"/>
-    {% endblock %}
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+    <!-- CSS : Individual Page -->
+    {% block stylesheets %}{% endblock %}
+    <!-- CSS : Cookie Consent -->
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"/>
     <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> -->
+    <!-- JS : Individual Page -->
+    {% block javascripts %}{% endblock %}
     <!-- JS : Cookie Consent -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
     <script>
@@ -47,7 +49,7 @@
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <!-- Navigation logo -->
-      <a href="/index.php">
+      <a href="{{ path('home') }}">
         <img class="d-none d-md-block" src="{{ asset('assets/img/logos/logo_white.png') }}" alt="Kipers Logo in White Version">
         <img class="d-block d-md-none" src="{{ asset('assets/img/logos/logo_white.png') }}" alt="Little Kipers Logo in White Version">
       </a>
@@ -59,41 +61,41 @@
         <ul class="navbar-nav align-items-start align-items-lg-center">
           <!-- Home -->
           <li class="list-unstyled m-3">
-            <a class="text-white" href="/index.php">
+            <a class="text-white" href="{{ path('home') }}">
               Accueil
             </a>
           </li>
 
           <!-- Simulateur -->
           <li class="list-unstyled m-3">
-            <a class="text-white" href="/simulation.php">
+            <a class="text-white" href="{{ path('simulation') }}">
               Simulateur
             </a>
           </li>
 
           <!-- Solution -->
           <li class="list-unstyled m-3">
-            <a class="text-white" href="/solution.php">
+            <a class="text-white" href="{{ path('solution') }}">
               Solutions
             </a>
           </li>
 
           <!-- News -->
           <li class="list-unstyled m-3">
-            <a class="text-white" href="/actu.php">
+            <a class="text-white" href="{{ path('article_list') }}">
               Actualités
             </a>
           </li>
 
           <!-- About us -->
           <li class="list-unstyled m-3">
-            <a class="text-white" href="/about.php">
-              A propos</a>
+            <a class="text-white" href="{{ path('company') }}">
+              Société</a>
           </li>
 
           <!-- Contact -->
           <li class="list-unstyled m-3">
-            <a class="text-white" href="/contact.php">
+            <a class="text-white" href="{{ path('contact') }}">
               Contactez-nous</a>
           </li>
 
@@ -109,7 +111,7 @@
     {% block body %}{% endblock %}
 
     <!-- Footer -->
-    <footer class="py-5 bg-secondary">
+    <footer class="pt-5 pb-4 bg-secondary">
       <div class="container">
         <div class="row justify-content-center justify-content-md-start mx-auto mx-md-0">
           <!-- Navigation section -->
@@ -124,42 +126,42 @@
             <ul class="p-0">
               <!-- Home -->
               <li class="list-unstyled">
-                <a class="text-white" href="/index.php">
+                <a class="text-white" href="{{ path('home') }}">
                   Accueil
                 </a>
               </li>
 
               <!-- Simulateur -->
               <li class="list-unstyled">
-                <a class="text-white" href="/simulation.php">
+                <a class="text-white" href="{{ path('simulation') }}">
                   Simulateur
                 </a>
               </li>
 
               <!-- Our solution -->
               <li class="list-unstyled">
-                <a class="text-white" href="/solution.php">
+                <a class="text-white" href="{{ path('solution') }}">
                   Solutions
                 </a>
               </li>
 
               <!-- News -->
               <li class="list-unstyled">
-                <a class="text-white" href="/actu.php">
+                <a class="text-white" href="{{ path('article_list') }}">
                   Actualités
                 </a>
               </li>
 
               <!-- About us -->
               <li class="list-unstyled">
-                <a class="text-white" href="/about.php">
-                  A propos
+                <a class="text-white" href="{{ path('company') }}">
+                  Société
                 </a>
               </li>
 
               <!-- Contact -->
               <li class="list-unstyled">
-                <a class="text-white" href="/contact.php">
+                <a class="text-white" href="{{ path('contact') }}">
                   Contactez-nous
                 </a>
               </li>
@@ -227,7 +229,7 @@
               </p>
             </div>
             <!-- Contact link -->
-            <a class="btn btn-primary mx-auto" href="/contact.php">
+            <a class="btn btn-primary mx-auto" href="{{ path('contact') }}">
               Contactez-nous
             </a>
             <!-- Social networks Hyperlinks -->
@@ -247,7 +249,6 @@
               </li>
             </ul>
           </div>
-
         </div>
 
         <!-- All right reserved -->
@@ -259,7 +260,7 @@
 
         <!-- Legal mentions & Site plan -->
         <div class="row text-white mx-auto text-center">
-          <p class="w-100 text-center text-white mb-3">
+          <p class="w-100 text-center text-white m-0">
             <a class="text-white" href="#">
               Mentions légales
             </a>
@@ -271,22 +272,22 @@
     </footer>
     <!-- End Footer -->
 
-    {% block javascripts %}
-      <script>
-        window.onscroll = function() {
-          myFunction()
-        };
-        var element = document.querySelector("main");
-        var sticky = element.offsetTop;
-        function myFunction() {
-          if (window.pageYOffset > sticky) {
-            $("nav").addClass("scrolled");
-          } else {
-            $("nav").removeClass("scrolled");
-          }
+    <script>
+      window.onscroll = function() {
+        myFunction()
+      };
+
+      var element = document.querySelector("main");
+      var sticky = element.offsetTop;
+
+      function myFunction() {
+        if (window.pageYOffset > sticky) {
+          $("nav").addClass("scrolled");
+        } else {
+          $("nav").removeClass("scrolled");
         }
-      </script>
-    {% endblock %}
+      }
+    </script>
 
   </body>
 </html>

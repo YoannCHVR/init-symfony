@@ -35,7 +35,7 @@ class ArticleType extends AbstractType
               'required' => false,
               'data_class' => null
             ])
-            //
+            // Submit Field
             ->add('save', SubmitType::class, ['label' => 'Create Article'])
         ;
     }

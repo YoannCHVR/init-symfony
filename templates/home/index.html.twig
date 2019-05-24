@@ -1,0 +1,360 @@
+{# HEADER / FOOTER #}
+{% extends 'base.html.twig' %}
+
+{# Title Page #}
+{% block title %}
+  Accueil
+{% endblock %}
+
+{# CSS : Individual Page #}
+{% block stylesheets %}{% endblock %}
+
+{# JS : Individual Page #}
+{% block javascripts %}
+  <script src="{{ asset('assets/js/fullclip.min.js') }}"></script>
+{% endblock %}
+
+{# BODY : Individual Page #}
+{% block body %}
+
+  <!-- Header with a slider background image -->
+  <header class="fullBackground">
+    <!-- Content -->
+    <div class="container">
+      <!-- Text informations section -->
+      <div class="row main-content py-header-section mx-auto d-flex justify-content-center align-content-center">
+        <!-- General text -->
+        <p class="col-12 text-center description-title mb-5">
+          Supprimez les zones d'ombre de votre activité
+          <br><br>
+          Valorisez vos données, gagnez en visibilité
+          <br>
+          et maîtrisez vos performances
+        </p>
+
+        <!-- Text slider -->
+        <div id="carouselContent" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner" role="listbox">
+
+            <!-- First text -->
+            <div class="carousel-item active text-center py-3">
+              <p class="col-12 text-center m-0 main-title">
+                <b>Dérives, rebuts, arrêts, gaspillages, pannes, retards, stress...</b>
+              </p>
+            </div>
+
+            <!-- Second text -->
+            <div class="carousel-item text-center py-3">
+              <p class="col-12 text-center m-0 main-title">
+                <b>Subir vs Agir</b>
+              </p>
+            </div>
+
+            <!-- Third text -->
+            <div class="carousel-item text-center py-3">
+              <p class="col-12 text-center m-0 main-title">
+                <b>Savez-vous identifier et quantifier vos leviers de performances ?</b>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Application section -->
+      <div class="row">
+        <div class="mx-auto col-lg-8 d-none">
+          <!-- Image of the application -->
+          <img class="w-100 mx-auto main-image" src="assets/img/pc.png" alt="Kipers application">
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <!-- Main -->
+  <main>
+
+    <!-- Solution presentation section -->
+    <div class="container py-section">
+      <div class="row">
+
+        <!-- Solution illustration -->
+        <div class="col-12 col-lg-6 mb-5 mb-lg-0">
+          <div class="row justify-content-center">
+            <div style="width: 400px;">
+              <img class="w-100" src="assets/img/icons/kipers_process.svg" alt=""/>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-8 col-lg-6 mx-auto mt-3 mt-lg-0">
+          <div class="row flex-column align-items-start align-items-lg-end text-left text-lg-right">
+            <div class="col-12 col-lg-9">
+              <!-- Solution Title -->
+              <h3 class="title-1 text-left text-lg-right">
+                <span class="underline underline-secondary">
+                  Notre métier
+                </span>
+              </h3>
+            </div>
+
+            <div class="col-12 col-6">
+              <!-- Text of solution presentation (simple text) -->
+              <p class="text-left text-lg-right mt-3 p-0" style="font-size: 1.2rem;">
+                Kipers Industries propose des solutions de suivi, d'analyse et d'anticipation des performances industrielles.<br><br>
+                Nous valorisons votre capital informationnel et développons les outils numériques adaptés à vos besoins.<br><br>
+                Notre ambition : renforcer votre capacité à agir et générer de nouvelles sources de profit et de motivation au quotidien.<br><br>
+              </p>
+
+              <!-- Button link to solution page with more specific informations -->
+              <a class="mt-3 btn btn-secondary" href="{{ path('solution') }}">
+                Découvrez nos solutions
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section with background image -->
+    <div id="bg-sep" class="bg-section container-fluid">
+      <div class="row">
+        <!-- Content -->
+        <div class="container">
+          <div class="row py-section flex-column">
+            <!-- Responsive col -->
+            <div class="col-12 col-lg-12 mx-auto mx-md-0">
+              <!-- Text slider -->
+              <div id="carouselContent" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+
+                  <!-- First text -->
+                  <div class="carousel-item active text-center py-3">
+                    <p class="text-center content-section text-white m-0" style="font-size: 1.5rem;">
+                      Une rupture méthodologique<br>
+                      Maîtriser le comportement et être proactif : décider sans subir
+                    </p>
+                  </div>
+
+                  <!-- Second text -->
+                  <div class="carousel-item text-center py-3">
+                    <p class="text-center content-section text-white m-0" style="font-size: 1.5rem;">
+                      Une rupture technologique<br>
+                      Exploiter la masse d'information et de processus de traitements
+                    </p>
+                  </div>
+
+                  <!-- Third text -->
+                  <div class="carousel-item text-center py-3">
+                    <p class="text-center content-section text-white m-0" style="font-size: 1.5rem;">
+                      Des bénéfices réels et multiples<br>
+                      Disponibilité des équipements, coûts d’exploitation, décisions...
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Solution presentation section -->
+    <div class="container py-section">
+      <div class="row">
+
+        <div class="col-8 col-lg-6 mx-auto mt-3 mt-lg-0">
+          <div class="row flex-column text-left">
+            <div class="col-12 col-lg-10">
+              <!-- Solution Title -->
+              <h3 class="title-1 text-left">
+                <span class="underline underline-secondary">
+                  Pour quels bénéfices&nbsp;?
+                </span>
+              </h3>
+            </div>
+
+            <div class="col-12 col-6 mb-5 mb-lg-0">
+              <!-- Text of solution presentation (simple text) -->
+              <p class="text mt-3 p-0" align="justify" style="font-size: 1.2rem;">
+                <b>Economisez de 10 à 40% des coûts d’exploitation !
+                </b><br><br>
+                Maîtrise des processus, de la conduite, de l’organisation… Kipers Industries développe des solutions permettant d’adopter une démarche d’amélioration continue des performances, tant au niveau opérationnel (augmentation de la disponibilité des
+                équipements…), que tactique (fiabilisation des programmes de production…) et stratégique (développement d’une politique RSE…).
+              </p>
+
+              <!-- Button link to solution page -> benefits part -->
+              <a class="mt-3 btn btn-secondary" href="{{ path('solution') }}#benefits">
+                Découvrez les bénéfices détaillés
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Solution illustration -->
+        <div class="col-12 col-lg-6 mt-5 mt-lg-0">
+          <div class="row justify-content-center">
+            <div style="width: 400px;">
+              <img class="w-100" src="assets/img/icons/benefices-pourFondBlanc-Vector.svg" alt=""/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demo section -->
+    <div id="demo" class="container-fluid bg-section bg-secondary py-section">
+      <div class="row">
+        <!-- Dual container to keep the content in the center and the background on all of the width page -->
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center">
+              <!-- Demo title -->
+              <p class="text-center text-white title-2">
+                Estimez vos performances et
+                <br>
+                votre potentiel d'économies&nbsp;
+                <br>
+              </p>
+
+              <!-- Button link to demonstration page -->
+              <a class="mt-3 btn btn-primary" href="{{ path('simulation') }}">
+                Simulateur
+              </a>
+            </div>
+
+            <div class="col-12 col-lg-6 p-0">
+              <!-- Image displayed when it's a large screen -->
+              <img class="d-none d-lg-block" src="assets/img/backgrounds/simulation.jpg" alt="">
+              <!-- Image displayed when it's a smartphone / small screen -->
+              <img class="w-100 d-block d-lg-none mt-4" src="assets/img/backgrounds/simulation.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Demo section -->
+
+    <!-- Benefits section -->
+    <div class="container-fluid py-section bg-secondary d-none">
+      <div class="row">
+        <div class="container">
+          <div class="row flex-row text-left">
+
+            <div id="bg-simu" class="bg-section col-6 d-flex flex-column justify-content-between">
+              <!-- Solution Title -->
+              <h3 class="title-1 text-left text-lg-center">
+                <span class="underline underline-main">
+                  Pour quels bénéfices ?
+                </span>
+              </h3>
+
+              <div class="d-flex flex-column align-items-center">
+                <!-- Button link to solution page with more specific informations -->
+                <a class="mt-3 w-75 btn btn-primary" href="{{ path('simulation') }}">
+                  Estimez vos performances
+                </a>
+
+                <a class="mt-3 w-75 btn btn-primary" href="{{ path('solution') }}#benefits">
+                  Découvrez les bénéfices détaillés
+                </a>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <img class="w-100" src="assets/img/icons/benefices-sansfond2.svg" alt=""/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Benefits section -->
+
+    <!-- News section -->
+    <div class="container py-section">
+      <div class="row">
+        <div class="col">
+          <!-- News Title -->
+          <h3 class="title-1 text-center mb-5">
+            <span class="underline underline-secondary">
+              Actualités
+            </span>
+          </h3>
+        </div>
+      </div>
+
+      <!-- Article section -->
+      <div class="row">
+        {% for article in articles %}
+          <!-- Article -->
+          <div class="col-12 col-md-6 col-lg-6 col-xl-4 px-3">
+            <a href="{{ path('article_list') }}">
+              <div class="article mb-4">
+                <!-- Article image -->
+                <img class="w-100 imgscale" src="{{ asset('assets/img/articles/' ~ article.image) }}" alt="">
+                <!-- Article informations -->
+                <div class="p-3">
+                  <!-- Article image -->
+                  <h5 class="title-3 color-2">
+                    {{ article.title }}
+                  </h5>
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- Link to show more articles -->
+      <div class="row">
+        <a class="btn btn-secondary mx-auto mt-3" href="{{ path('article_list') }}">
+          Voir plus d'actualités
+        </a>
+      </div>
+
+    </div>
+    <!-- End Article section -->
+
+    <!-- Keep in touch section -->
+    <div id="bg-keepTouch" class="container-fluid bg-section">
+      <div class="row">
+        <!-- Dual container to keep the content in the center and the background on all of the width page -->
+        <div class="container py-section">
+          <div class="row flex-column">
+            <!-- Responsive col -->
+            <div class="col-10 col-lg-8 mx-auto text-center">
+              <!-- Text content -->
+              <p class=" bg-section-text-footer text-white title-2 mb-4">
+                Des interrogations ?
+              </p>
+
+              <!-- Link to the contact page -->
+              <a class="mx-auto btn btn-secondary" href="{{ path('contact') }}">
+                Contactez-nous
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- End Keep in touch section -->
+
+  </main>
+  <!-- End Main -->
+
+  <script type="text/javascript">
+    $('.carousel').carousel({pause: false});
+
+    $('.fullBackground').fullClip({
+      images: [
+        '{{ asset(' assets / img / slider / background_1.jpg ') }}',
+        'assets/img/slider/background.jpg',
+        'assets/img/slider/background_2.jpg'
+      ],
+      transitionTime: 100,
+      wait: 5200
+    });
+  </script>
+
+{% endblock %}
