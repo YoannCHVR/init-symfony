@@ -1,4 +1,4 @@
-<html lang="fr" dir="ltr">
+<html lang="{{ app.request.locale|split('_')[0] }}">
   <head>
     <!-- GENERAL -->
     <meta charset="utf-8">
@@ -18,6 +18,9 @@
     <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <!-- JS : Translation -->
+    <script src="{{ asset('bundles/bazingajstranslation/js/translator.min.js') }}"></script>
+    <script src="{{ url('bazinga_jstranslation_js', { 'locales': 'fr,en' }) }}"></script>
     <!-- JS : Individual Page -->
     {% block javascripts %}{% endblock %}
     <!-- JS : Cookie Consent -->

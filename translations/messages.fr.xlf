@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="LCa0a2j" resname="foo">
+        <source>foo</source>
+        <target>Bite</target>
+      </trans-unit>
+      <trans-unit id="rxdc_rm" resname="simulation.index.header.title1">
+        <source>simulation.index.header.title1</source>
+        <target>Estimez vos performances et votre potentiel d'économies</target>
+      </trans-unit>
+      <trans-unit id="MxNWrzm" resname="simulation.index.header.title2">
+        <source>simulation.index.header.title2</source>
+        <target>en moins d'une minute !</target>
+      </trans-unit>
+      <trans-unit id="jfIBsEJ" resname="simulation.index.simulation.title">
+        <source>simulation.index.simulation.title</source>
+        <target>Quelles performances ?</target>
+      </trans-unit>
+      <trans-unit id="cpu4xkd" resname="simulation.index.simulation.intro1.title">
+        <source>simulation.index.simulation.intro1.title</source>
+        <target>Service, disponibilité, qualité… et coûts cachés</target>
+      </trans-unit>
+      <trans-unit id="cHSG7Z." resname="simulation.index.simulation.intro1.content">
+        <source>simulation.index.simulation.intro1.content</source>
+        <target>Si la satisfaction client reste une priorité, la performance industrielle n’en est pas moins multicritères ! Nous vous proposons de jeter un regard critique sur les coûts cachés de votre activité productive, et de vous projeter dans une démarche proactive.</target>
+      </trans-unit>
+      <trans-unit id="AJ0611Q" resname="simulation.index.simulation.intro2.title">
+        <source>simulation.index.simulation.intro2.title</source>
+        <target>Moins d'une minute : générez votre pdf</target>
+      </trans-unit>
+      <trans-unit id="0m06YDQ" resname="simulation.index.simulation.intro2.content">
+        <source>simulation.index.simulation.intro2.content</source>
+        <target>Choisissez une ligne de production représentative de votre activité et laissez-vous guider. Notre outil propose une estimation rapide de vos performances industrielles (temps à valeur ajoutée, cartographie des pertes…), et révèle les économies et gains que vous pourriez réaliser en ciblant vos efforts.</target>
+      </trans-unit>
+      <trans-unit id="z9lFuAn" resname="simulation.index.addedValue.content">
+        <source>simulation.index.addedValue.content</source>
+        <target>Votre temps passé à créer de la valeur ajoutée est estimé à</target>
+      </trans-unit>
+      <trans-unit id="ot73p9R" resname="simulation.index.charts.title">
+        <source>simulation.index.charts.title</source>
+        <target>Estimation de votre situation</target>
+      </trans-unit>
+      <trans-unit id="IeuegCe" resname="simulation.index.charts.array">
+        <source>simulation.index.charts.array</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="lJ3NbqC" resname="simulation.form.field1.label">
+        <source>simulation.form.field1.label</source>
+        <target>Nombre de jours travaillés (par an)</target>
+      </trans-unit>
+      <trans-unit id="wfbgMwk" resname="simulation.form.field1.placeholder">
+        <source>simulation.form.field1.placeholder</source>
+        <target>175</target>
+      </trans-unit>
+      <trans-unit id="Ki_Gggr" resname="simulation.form.field1.more">
+        <source>simulation.form.field1.more</source>
+        <target>Autre:</target>
+      </trans-unit>
+      <trans-unit id="D_Dz6Zr" resname="simulation.form.field2.label">
+        <source>simulation.form.field2.label</source>
+        <target>Rotation du temps de travail</target>
+      </trans-unit>
+      <trans-unit id="NUgFd6F" resname="simulation.form.field2.placeholder">
+        <source>simulation.form.field2.placeholder</source>
+        <target>Choisir</target>
+      </trans-unit>
+      <trans-unit id="QQE3QH_" resname="simulation.form.field3.label">
+        <source>simulation.form.field3.label</source>
+        <target>Taux de qualité (en %)</target>
+      </trans-unit>
+      <trans-unit id="f5DwkYz" resname="simulation.form.field3.placeholder">
+        <source>simulation.form.field3.placeholder</source>
+        <target>Taux de qualité (en %)</target>
+      </trans-unit>
+      <trans-unit id="nMLqXep" resname="simulation.form.field4.label">
+        <source>simulation.form.field4.label</source>
+        <target>Arrêts planifiés (jours/an)</target>
+      </trans-unit>
+      <trans-unit id="cgBW1B0" resname="simulation.form.field4.placeholder">
+        <source>simulation.form.field4.placeholder</source>
+        <target>Arrêts planifiés (jours/an)</target>
+      </trans-unit>
+      <trans-unit id="gksQzE5" resname="simulation.form.field5.label">
+        <source>simulation.form.field5.label</source>
+        <target>Arrêts non-planifiés (jours/an)</target>
+      </trans-unit>
+      <trans-unit id="7kvilfR" resname="simulation.form.field5.placeholder">
+        <source>simulation.form.field5.placeholder</source>
+        <target>Arrêts non-planifiés (jours/an)</target>
+      </trans-unit>
+      <trans-unit id="EUIkbVj" resname="simulation.form.field6.label">
+        <source>simulation.form.field6.label</source>
+        <target>Cadence nominale de la ligne (unités/heure)</target>
+      </trans-unit>
+      <trans-unit id="a0d9T6c" resname="simulation.form.field6.placeholder">
+        <source>simulation.form.field6.placeholder</source>
+        <target>8000</target>
+      </trans-unit>
+      <trans-unit id="cUFmDpb" resname="simulation.form.field7.label">
+        <source>simulation.form.field7.label</source>
+        <target>Cadence réelle de la ligne (unités/heure)</target>
+      </trans-unit>
+      <trans-unit id="ttyo47k" resname="simulation.form.field7.placeholder">
+        <source>simulation.form.field7.placeholder</source>
+        <target>6500</target>
+      </trans-unit>
+      <trans-unit id="44LNeUE" resname="symfony.great">
+        <source>symfony.great</source>
+        <target>J'aime Symfony</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

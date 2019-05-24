@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="LCa0a2j" resname="foo">
+        <source>foo</source>
+        <target>Beate</target>
+      </trans-unit>
+      <trans-unit id="rxdc_rm" resname="simulation.index.header.title1">
+        <source>simulation.index.header.title1</source>
+        <target>Estimate your performance and savings potential</target>
+      </trans-unit>
+      <trans-unit id="MxNWrzm" resname="simulation.index.header.title2">
+        <source>simulation.index.header.title2</source>
+        <target>in less than a minute!</target>
+      </trans-unit>
+      <trans-unit id="jfIBsEJ" resname="simulation.index.simulation.title">
+        <source>simulation.index.simulation.title</source>
+        <target>What performances ?</target>
+      </trans-unit>
+      <trans-unit id="cpu4xkd" resname="simulation.index.simulation.intro1.title">
+        <source>simulation.index.simulation.intro1.title</source>
+        <target>Service, availability, quality... and hidden costs</target>
+      </trans-unit>
+      <trans-unit id="cHSG7Z." resname="simulation.index.simulation.intro1.content">
+        <source>simulation.index.simulation.intro1.content</source>
+        <target>If customer satisfaction remains a priority, industrial performance is nonetheless multi-criteria! We suggest that you take a critical look at the hidden costs of your production activity and project yourself into a proactive approach.</target>
+      </trans-unit>
+      <trans-unit id="AJ0611Q" resname="simulation.index.simulation.intro2.title">
+        <source>simulation.index.simulation.intro2.title</source>
+        <target>Less than a minute: generate your pdf</target>
+      </trans-unit>
+      <trans-unit id="0m06YDQ" resname="simulation.index.simulation.intro2.content">
+        <source>simulation.index.simulation.intro2.content</source>
+        <target>Choose a production line that is representative of your activity and let us guide you. Our tool provides a quick estimate of your industrial performance (value-added time, loss mapping, etc.), and reveals the savings and gains you could achieve by targeting your efforts.</target>
+      </trans-unit>
+      <trans-unit id="lJ3NbqC" resname="simulation.form.field1.label">
+        <source>simulation.form.field1.label</source>
+        <target>Number of days worked (per year)</target>
+      </trans-unit>
+      <trans-unit id="wfbgMwk" resname="simulation.form.field1.placeholder">
+        <source>simulation.form.field1.placeholder</source>
+        <target>175</target>
+      </trans-unit>
+      <trans-unit id="Ki_Gggr" resname="simulation.form.field1.more">
+        <source>simulation.form.field1.more</source>
+        <target>Other:</target>
+      </trans-unit>
+      <trans-unit id="D_Dz6Zr" resname="simulation.form.field2.label">
+        <source>simulation.form.field2.label</source>
+        <target>Rotation of working time</target>
+      </trans-unit>
+      <trans-unit id="NUgFd6F" resname="simulation.form.field2.placeholder">
+        <source>simulation.form.field2.placeholder</source>
+        <target>Choose</target>
+      </trans-unit>
+      <trans-unit id="QQE3QH_" resname="simulation.form.field3.label">
+        <source>simulation.form.field3.label</source>
+        <target>Quality rate (in %)</target>
+      </trans-unit>
+      <trans-unit id="f5DwkYz" resname="simulation.form.field3.placeholder">
+        <source>simulation.form.field3.placeholder</source>
+        <target>Quality rate (in %)</target>
+      </trans-unit>
+      <trans-unit id="nMLqXep" resname="simulation.form.field4.label">
+        <source>simulation.form.field4.label</source>
+        <target>Planned downtime (days/year)</target>
+      </trans-unit>
+      <trans-unit id="cgBW1B0" resname="simulation.form.field4.placeholder">
+        <source>simulation.form.field4.placeholder</source>
+        <target>Planned downtime (days/year)</target>
+      </trans-unit>
+      <trans-unit id="gksQzE5" resname="simulation.form.field5.label">
+        <source>simulation.form.field5.label</source>
+        <target>Unplanned downtine (days/year)</target>
+      </trans-unit>
+      <trans-unit id="7kvilfR" resname="simulation.form.field5.placeholder">
+        <source>simulation.form.field5.placeholder</source>
+        <target>Unplanned downtine (days/year)</target>
+      </trans-unit>
+      <trans-unit id="EUIkbVj" resname="simulation.form.field6.label">
+        <source>simulation.form.field6.label</source>
+        <target>Nominal line speed (units/hour)</target>
+      </trans-unit>
+      <trans-unit id="a0d9T6c" resname="simulation.form.field6.placeholder">
+        <source>simulation.form.field6.placeholder</source>
+        <target>8000</target>
+      </trans-unit>
+      <trans-unit id="cUFmDpb" resname="simulation.form.field7.label">
+        <source>simulation.form.field7.label</source>
+        <target>Real line speed (units/hour)</target>
+      </trans-unit>
+      <trans-unit id="ttyo47k" resname="simulation.form.field7.placeholder">
+        <source>simulation.form.field7.placeholder</source>
+        <target>6500</target>
+      </trans-unit>
+      <trans-unit id="44LNeUE" resname="symfony.great">
+        <source>symfony.great</source>
+        <target>I love Symfony</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

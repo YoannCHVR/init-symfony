@@ -1,6 +1,8 @@
 var doc = new jsPDF();
 var formData = new FormData();
 
+console.log(Translator.locale);
+
 Vue.component("reactive-stacked-bar-chart", {
   props: ["stack_bar_chart"],
   template: '<div :ref="stack_bar_chart.uuid"></div>',
@@ -110,7 +112,7 @@ const simulation = new Vue({
       uuid: "123",
       traces: [{
           y: [],
-          name: '% Valeur Ajoutée',
+          name: Translator.trans('foo'),
           orientation: 'v',
           text: [],
           textposition: 'auto',

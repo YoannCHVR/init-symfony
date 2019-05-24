@@ -1,0 +1,43 @@
+foo: "France"
+
+simulation:
+      index:
+        header:
+            title1: Estimez vos performances et votre potentiel d'économies
+            title2: en moins d'une minute !
+        simulation:
+            title: Quelles performances ?
+            intro1:
+                title: Service, disponibilité, qualité… et coûts cachés
+                content: Si la satisfaction client reste une priorité, la performance industrielle n’en est pas moins multicritères ! Nous vous proposons de jeter un regard critique sur les coûts cachés de votre activité productive, et de vous projeter dans une démarche proactive.
+            intro2:
+                title: "Moins d'une minute : générez votre pdf"
+                content: Choisissez une ligne de production représentative de votre activité et laissez-vous guider. Notre outil propose une estimation rapide de vos performances industrielles (temps à valeur ajoutée, cartographie des pertes…), et révèle les économies et gains que vous pourriez réaliser en ciblant vos efforts.
+        addedValue:
+            content: Votre temps passé à créer de la valeur ajoutée est estimé à
+        charts:
+            title: Estimation de votre situation
+            array:
+      form:
+        field1:
+          label: Nombre de jours travaillés (par an)
+          placeholder: 175
+          more: Autre:
+        field2:
+          label: Rotation du temps de travail
+          placeholder: Choisir
+        field3:
+          label: Taux de qualité (en %)
+          placeholder: Taux de qualité (en %)
+        field4:
+          label: Arrêts planifiés (jours/an)
+          placeholder: Arrêts planifiés (jours/an)
+        field5:
+          label: Arrêts non-planifiés (jours/an)
+          placeholder: Arrêts non-planifiés (jours/an)
+        field6:
+          label: Cadence nominale de la ligne (unités/heure)
+          placeholder: 8000
+        field7:
+          label: Cadence réelle de la ligne (unités/heure)
+          placeholder: 6500

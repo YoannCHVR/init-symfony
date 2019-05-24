@@ -1,0 +1,38 @@
+foo: "English"
+
+simulation:
+      index:
+        header:
+            title1: Estimate your performance and savings potential
+            title2: in less than a minute!
+        simulation:
+            title: What performances ?
+            intro1:
+                title: Service, availability, quality... and hidden costs
+                content: If customer satisfaction remains a priority, industrial performance is nonetheless multi-criteria! We suggest that you take a critical look at the hidden costs of your production activity and project yourself into a proactive approach.
+            intro2:
+                title: "Less than a minute: generate your pdf"
+                content: Choose a production line that is representative of your activity and let us guide you. Our tool provides a quick estimate of your industrial performance (value-added time, loss mapping, etc.), and reveals the savings and gains you could achieve by targeting your efforts.
+      form:
+        field1:
+          label: Number of days worked (per year)
+          placeholder: 175
+          more: Other:
+        field2:
+          label: Rotation of working time
+          placeholder: Choose
+        field3:
+          label: Quality rate (in %)
+          placeholder: Quality rate (in %)
+        field4:
+          label: Planned downtime (days/year)
+          placeholder: Planned downtime (days/year)
+        field5:
+          label: Unplanned downtine (days/year)
+          placeholder: Unplanned downtine (days/year)
+        field6:
+          label: Nominal line speed (units/hour)
+          placeholder: 8000
+        field7:
+          label: Real line speed (units/hour)
+          placeholder: 6500
