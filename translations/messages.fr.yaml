@@ -1,6 +1,8 @@
 foo: "France"
 
 simulation:
+      general:
+          unknown: Inconnu
       index:
         header:
             title1: Estimez vos performances et votre potentiel d'économies
@@ -18,6 +20,54 @@ simulation:
         charts:
             title: Estimation de votre situation
             array:
+                col1:
+                    title: Taux
+                    line1: Disponibilité
+                    line2: Performance
+                    line3: Qualité
+                col2:
+                    title: Temps à valeur ajoutée
+            chart1:
+                title: Découpage de votre activité (% temps)
+                legend:
+                    item1: "% Pertes Inexpliquées"
+                    item2: "% Pertes Qualités"
+                    item3: "% Pertes Performances"
+                    item4: "% Pertes Arrêts"
+                    item5: "% Valeur Ajoutée"
+            chart2:
+                title: Gain de CA potentiel
+                legend:
+                    item1: réduction de 20% des pertes
+                    item2: réduction de 40% des pertes
+                label:
+                    x: Coût horaire de votre ligne (€)
+                    y: Économies potentielles (€)
+                text:
+                    item1: € économisés
+                    item2: € économisés
+            chart3:
+                title: Gain de CA potentiel
+                legend:
+                    item1: réaffectation des 20% de pertes économisées
+                    item2: réaffectation des 40% de pertes économisées
+                label:
+                    x: Chiffre d'affaires actuel généré par cette ligne (M€)
+                    y: Gain de CA potentiel (€)
+                text:
+                    item1: € ; gain de CA potentiel
+                    item2: € ; gain de CA potentiel
+        keepintouch:
+            content1:
+                title: Envie de recevoir le compte rendu par mail ?
+                form:
+                    placeholder1: Email
+                    placeholder2: Entreprise
+                    button: Recevoir le pdf
+                    info: Les données collectées servent à la génération de votre pdf
+            content2:
+                title: Des explications ? Une analyse plus détaillée ?
+                button: Contactez-nous
       form:
         field1:
           label: Nombre de jours travaillés (par an)

@@ -9,6 +9,10 @@
         <source>foo</source>
         <target>Bite</target>
       </trans-unit>
+      <trans-unit id="yJVC5sU" resname="simulation.general.unknown">
+        <source>simulation.general.unknown</source>
+        <target>Inconnu</target>
+      </trans-unit>
       <trans-unit id="rxdc_rm" resname="simulation.index.header.title1">
         <source>simulation.index.header.title1</source>
         <target>Estimez vos performances et votre potentiel d'économies</target>
@@ -45,9 +49,105 @@
         <source>simulation.index.charts.title</source>
         <target>Estimation de votre situation</target>
       </trans-unit>
-      <trans-unit id="IeuegCe" resname="simulation.index.charts.array">
-        <source>simulation.index.charts.array</source>
-        <target></target>
+      <trans-unit id="V9QN5RD" resname="simulation.index.charts.array.col1.title">
+        <source>simulation.index.charts.array.col1.title</source>
+        <target>Taux</target>
+      </trans-unit>
+      <trans-unit id="hyYN27K" resname="simulation.index.charts.array.col1.line1">
+        <source>simulation.index.charts.array.col1.line1</source>
+        <target>Disponibilité</target>
+      </trans-unit>
+      <trans-unit id="8H0NjyF" resname="simulation.index.charts.array.col1.line2">
+        <source>simulation.index.charts.array.col1.line2</source>
+        <target>Performance</target>
+      </trans-unit>
+      <trans-unit id="rcqa3n7" resname="simulation.index.charts.array.col1.line3">
+        <source>simulation.index.charts.array.col1.line3</source>
+        <target>Qualité</target>
+      </trans-unit>
+      <trans-unit id="aIKEuA0" resname="simulation.index.charts.array.col2.title">
+        <source>simulation.index.charts.array.col2.title</source>
+        <target>Temps à valeur ajoutée</target>
+      </trans-unit>
+      <trans-unit id="MxmZMW4" resname="simulation.index.charts.chart1.title">
+        <source>simulation.index.charts.chart1.title</source>
+        <target>Découpage de votre activité (% temps)</target>
+      </trans-unit>
+      <trans-unit id="hT7FagR" resname="simulation.index.charts.chart1.legend.item1">
+        <source>simulation.index.charts.chart1.legend.item1</source>
+        <target>% Pertes Inexpliquées</target>
+      </trans-unit>
+      <trans-unit id="2TwQ1.J" resname="simulation.index.charts.chart1.legend.item2">
+        <source>simulation.index.charts.chart1.legend.item2</source>
+        <target>% Pertes Qualités</target>
+      </trans-unit>
+      <trans-unit id="SP09bdG" resname="simulation.index.charts.chart1.legend.item3">
+        <source>simulation.index.charts.chart1.legend.item3</source>
+        <target>% Pertes Performances</target>
+      </trans-unit>
+      <trans-unit id="ojIkiWi" resname="simulation.index.charts.chart1.legend.item4">
+        <source>simulation.index.charts.chart1.legend.item4</source>
+        <target>% Pertes Arrêts</target>
+      </trans-unit>
+      <trans-unit id="Vt6pEay" resname="simulation.index.charts.chart1.legend.item5">
+        <source>simulation.index.charts.chart1.legend.item5</source>
+        <target>% Valeur Ajoutée</target>
+      </trans-unit>
+      <trans-unit id="1Y8jlOM" resname="simulation.index.charts.chart2.title">
+        <source>simulation.index.charts.chart2.title</source>
+        <target>Gain de CA potentiel</target>
+      </trans-unit>
+      <trans-unit id="eQOhhph" resname="simulation.index.charts.chart2.legend.item1">
+        <source>simulation.index.charts.chart2.legend.item1</source>
+        <target>réduction de 20% des pertes</target>
+      </trans-unit>
+      <trans-unit id="AfgU4bj" resname="simulation.index.charts.chart2.legend.item2">
+        <source>simulation.index.charts.chart2.legend.item2</source>
+        <target>réduction de 40% des pertes</target>
+      </trans-unit>
+      <trans-unit id="Xb9X9TH" resname="simulation.index.charts.chart2.label.x">
+        <source>simulation.index.charts.chart2.label.x</source>
+        <target>Coût horaire de votre ligne (€)</target>
+      </trans-unit>
+      <trans-unit id="EjoNQNs" resname="simulation.index.charts.chart2.label.y">
+        <source>simulation.index.charts.chart2.label.y</source>
+        <target>Économies potentielles (€)</target>
+      </trans-unit>
+      <trans-unit id="4e5MwVX" resname="simulation.index.charts.chart2.text.item1">
+        <source>simulation.index.charts.chart2.text.item1</source>
+        <target>€ économisés</target>
+      </trans-unit>
+      <trans-unit id="H0sUHKk" resname="simulation.index.charts.chart2.text.item2">
+        <source>simulation.index.charts.chart2.text.item2</source>
+        <target>€ économisés</target>
+      </trans-unit>
+      <trans-unit id="OqZb2yh" resname="simulation.index.charts.chart3.title">
+        <source>simulation.index.charts.chart3.title</source>
+        <target>Gain de CA potentiel</target>
+      </trans-unit>
+      <trans-unit id="cqR5GD3" resname="simulation.index.charts.chart3.legend.item1">
+        <source>simulation.index.charts.chart3.legend.item1</source>
+        <target>réaffectation des 20% de pertes économisées</target>
+      </trans-unit>
+      <trans-unit id="GYliEJT" resname="simulation.index.charts.chart3.legend.item2">
+        <source>simulation.index.charts.chart3.legend.item2</source>
+        <target>réaffectation des 40% de pertes économisées</target>
+      </trans-unit>
+      <trans-unit id="m00WQ2." resname="simulation.index.charts.chart3.label.x">
+        <source>simulation.index.charts.chart3.label.x</source>
+        <target>Chiffre d'affaires actuel généré par cette ligne (M€)</target>
+      </trans-unit>
+      <trans-unit id=".z_Mloo" resname="simulation.index.charts.chart3.label.y">
+        <source>simulation.index.charts.chart3.label.y</source>
+        <target>Gain de CA potentiel (€)</target>
+      </trans-unit>
+      <trans-unit id="0QxJ8NE" resname="simulation.index.charts.chart3.text.item1">
+        <source>simulation.index.charts.chart3.text.item1</source>
+        <target>€ ; gain de CA potentiel</target>
+      </trans-unit>
+      <trans-unit id="bjUSw61" resname="simulation.index.charts.chart3.text.item2">
+        <source>simulation.index.charts.chart3.text.item2</source>
+        <target>€ ; gain de CA potentiel</target>
       </trans-unit>
       <trans-unit id="lJ3NbqC" resname="simulation.form.field1.label">
         <source>simulation.form.field1.label</source>
@@ -108,6 +208,10 @@
       <trans-unit id="ttyo47k" resname="simulation.form.field7.placeholder">
         <source>simulation.form.field7.placeholder</source>
         <target>6500</target>
+      </trans-unit>
+      <trans-unit id="IeuegCe" resname="simulation.index.charts.array">
+        <source>simulation.index.charts.array</source>
+        <target></target>
       </trans-unit>
       <trans-unit id="44LNeUE" resname="symfony.great">
         <source>symfony.great</source>

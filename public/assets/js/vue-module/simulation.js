@@ -112,7 +112,7 @@ const simulation = new Vue({
       uuid: "123",
       traces: [{
           y: [],
-          name: Translator.trans('foo'),
+          name: Translator.trans('simulation.index.charts.chart1.legend.item1'),
           orientation: 'v',
           text: [],
           textposition: 'auto',
@@ -124,7 +124,7 @@ const simulation = new Vue({
         },
         {
           y: [],
-          name: '% Pertes Arrêts',
+          name: Translator.trans('simulation.index.charts.chart1.legend.item2'),
           orientation: 'v',
           text: [],
           textposition: 'auto',
@@ -136,7 +136,7 @@ const simulation = new Vue({
         },
         {
           y: [],
-          name: '% Pertes Performances',
+          name: Translator.trans('simulation.index.charts.chart1.legend.item3'),
           orientation: 'v',
           text: [],
           textposition: 'auto',
@@ -148,7 +148,7 @@ const simulation = new Vue({
         },
         {
           y: [],
-          name: '% Pertes Qualités',
+          name: Translator.trans('simulation.index.charts.chart1.legend.item4'),
           orientation: 'v',
           text: [],
           textposition: 'auto',
@@ -160,7 +160,7 @@ const simulation = new Vue({
         },
         {
           y: [],
-          name: '% Pertes Inexpliquées',
+          name: Translator.trans('simulation.index.charts.chart1.legend.item5'),
           orientation: 'v',
           text: [],
           textposition: 'auto',
@@ -197,9 +197,9 @@ const simulation = new Vue({
           x: [],
           y: [],
           mode: 'lines+markers',
-          name: 'réduction de 20% des pertes',
+          name: Translator.trans('simulation.index.charts.chart2.legend.item1'),
           type: 'scatter',
-          text: '€ économisés',
+          text: Translator.trans('simulation.index.charts.chart2.text.item1'),
           line: {
             dash: 'solid',
             color: 'rgba(8, 41, 71, 1)',
@@ -210,9 +210,9 @@ const simulation = new Vue({
           x: [],
           y: [],
           mode: 'lines+markers',
-          name: 'réduction de 40% des pertes',
+          name: Translator.trans('simulation.index.charts.chart2.legend.item2'),
           type: 'scatter',
-          text: '€ économisés',
+          text: Translator.trans('simulation.index.charts.chart2.text.item2'),
           line: {
             dash: 'dashdot',
             color: 'rgba(41, 183, 116, 1)',
@@ -222,7 +222,7 @@ const simulation = new Vue({
       ],
       layout: {
          xaxis: {
-          title: 'Coût horaire de votre ligne (€)',
+          title: Translator.trans('simulation.index.charts.chart2.label.x'),
           titlefont: {
             family: 'Arial, sans-serif',
             size: 18,
@@ -232,7 +232,7 @@ const simulation = new Vue({
           fixedrange: true,
         },
         yaxis: {
-          title: 'Économies potentielles (€)',
+          title: Translator.trans('simulation.index.charts.chart2.label.y'),
           titlefont: {
             family: 'Arial, sans-serif',
             size: 18,
@@ -261,9 +261,9 @@ const simulation = new Vue({
           x: [],
           y: [],
           mode: 'lines+markers',
-          name: 'réaffectation des 20% de pertes économisées',
+          name: Translator.trans('simulation.index.charts.chart3.legend.item1'),
           type: 'scatter',
-          text: '€ ; gain de CA potentiel',
+          text: Translator.trans('simulation.index.charts.chart3.text.item1'),
           line: {
             dash: 'solid',
             color: 'rgba(8, 41, 71, 1)',
@@ -274,9 +274,9 @@ const simulation = new Vue({
           x: [],
           y: [],
           mode: 'lines+markers',
-          name: 'réaffectation des 40% de pertes économisées',
+          name: Translator.trans('simulation.index.charts.chart3.legend.item2'),
           type: 'scatter',
-          text: '€ ; gain de CA potentiel',
+          text: Translator.trans('simulation.index.charts.chart3.text.item2'),
           line: {
             dash: 'dashdot',
             color: 'rgba(41, 183, 116, 1)',
@@ -286,7 +286,7 @@ const simulation = new Vue({
       ],
       layout: {
         xaxis: {
-          title: "Chiffre d'affaires actuel généré par cette ligne (M€)",
+          title: Translator.trans('simulation.index.charts.chart3.label.x'),
           // Attention, on affiche directement des millions d'euros sur x
           titlefont: {
             family: 'Arial, sans-serif',
@@ -297,7 +297,7 @@ const simulation = new Vue({
           fixedrange: true,
         },
         yaxis: {
-          title: 'Gain de CA potentiel (€)',
+          title: Translator.trans('simulation.index.charts.chart3.label.y'),
           titlefont: {
             family: 'Arial, sans-serif',
             size: 18,

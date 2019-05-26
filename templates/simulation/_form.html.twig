@@ -65,13 +65,12 @@
           }
         )
       }}
-      <span class="d-none">{{ 'simulation.form.field2.placeholder'|trans }}</span>
     </div>
 
     <!-- Rate Quality section -->
     <div class="form-group col-md-6">
       {{ form_label(form.rateQuality,
-          'Taux de qualité (en %)',
+          'simulation.form.field3.label',
           {'label_attr': {
             'class': ''
             }
@@ -85,7 +84,7 @@
           {'attr': {
             'class': 'form-control',
             'v-model': 'form.rateQuality',
-            'placeholder': 'Taux de qualité (en %)'
+            'placeholder': 'simulation.form.field3.placeholder'
             }
           }
         )
@@ -98,7 +97,7 @@
     <!-- Planned Downtine section -->
     <div class="form-group col-md-6">
       {{ form_label(form.plannedDowntime,
-          'Arrêts planifiés (jours/an)',
+          'simulation.form.field4.label',
           {'label_attr': {
             'class': ''
             }
@@ -112,7 +111,7 @@
           {'attr': {
             'class': 'form-control',
             'v-model' : 'form.plannedDowntime',
-            'placeholder': 'Arrêts planifiés (jours/an)'
+            'placeholder': 'simulation.form.field4.placeholder'
             }
           }
         )
@@ -122,7 +121,7 @@
     <!-- Unplanned Downtime section -->
     <div class="form-group col-md-6">
       {{ form_label(form.unplannedDowntime,
-          'Arrêts non-planifiés (jours/an)',
+          'simulation.form.field5.label',
           {'label_attr': {
             'class': ''
             }
@@ -136,7 +135,7 @@
           {'attr': {
             'class': 'form-control',
             'v-model' : 'form.unplannedDowntime',
-            'placeholder': 'Arrêts non-planifiés (jours/an)'
+            'placeholder': 'simulation.form.field5.placeholder'
             }
           }
         )
@@ -149,7 +148,7 @@
     <!-- Nominal Cadence section -->
     <div class="form-group col-md-12">
       {{ form_label(form.nominalCadence,
-          'Cadence nominale de la ligne (unités/heure)',
+          'simulation.form.field6.label',
           {'label_attr': {
             'class': ''
             }
@@ -169,7 +168,7 @@
             }
           )
         }}
-        <input type="number" class="ml-3 form-control w-50" name="nominalCadence" v-model="form.nominalCadence">
+        <input type="number" class="ml-3 form-control w-50" name="nominalCadence" v-model="form.nominalCadence" placeholder="{{ 'simulation.form.field6.placeholder'|trans }}">
       </div>
     </div>
   </div>
@@ -179,7 +178,7 @@
     <!-- Real Cadence section -->
     <div class="form-group col-md-12">
       {{ form_label(form.realCadence,
-          'Cadence réelle de la ligne (unités/heure)',
+          'simulation.form.field7.label',
           {'label_attr': {
             'class': ''
             }
@@ -199,7 +198,7 @@
             }
           )
         }}
-        <input type="number" class="ml-3 form-control w-50" name="realCadence" v-model="form.realCadence">
+        <input type="number" class="ml-3 form-control w-50" name="realCadence" v-model="form.realCadence" placeholder="{{ 'simulation.form.field7.placeholder'|trans }}">
       </div>
     </div>
   </div>
