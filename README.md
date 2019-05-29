@@ -225,4 +225,6 @@
         form:
             content: 
   ```
+  > Remarque: Si Symfony dit qu'il y a une erreur dans la traduction
+  > (surement à cause de ' ou : alors mettre la traduction entre "traduction").
 ## VueJS:
