@@ -1,5 +1,57 @@
 # Kipers Industries
 ## Initialisation du poste de travail:
+### Avant de commencer:
+* Avant toute chose, voici quelques pré-requis :
+    * Installer Wampserver
+    * Installer GIT (pour la console / CMD)
+    * S'assurer que le projet Symfony possède un composer.phar à sa racine
+    * Connaître des identifiants de base de données locale
+    
+### Première installation:
+* Pour commencer:
+    * lancer Wampserver (le voyant doit être vert après quelques secondes)
+    * executer, à l'aide d'un terminal, la commande suivante:
+      ```
+      git clone le_lien_du_repo_du_projet
+      ```
+    * vous allez avoir un nouveau fichier qui va apparaître dans le fichier où vous avez exécutée la commande.
+    * dans ce dossier, il y a un fichier .env.exemple. Créer un nouveau fichier .env t copier y le contenu du .env.exemple.
+    * changer ensuite les lignes suivantes avec vos identifiants de base de données:
+      ```
+      DATABASE_URL=mysql://username:password@127.0.0.1:3306/database
+      ```
+    > Note: il faut créer soi-même la database directement dans sa base de données pour que doctrine puisse y accéder.
+    * executer la commande suivante, qui permet d'installer les dépendances de Symfony:
+      ```
+      composer install
+      ```
+    * executer la commande doctrine qui va permettre de créer votre base de données en fonction de votre projet Symfony:
+      ```
+      php bin/console doctrine:schema:create
+      ```
+    * vous pouvez maintenant lancer votre serveur, et développer !
+      ```
+      php bin/console serveur:run
+      ```
+### Utilisation récurrente:
+* Après plusieurs utilisation, les procédures sont un peu différentes:
+    * lancer toujours Wampserver avant toute chose, pour avoir accès à votre base de données
+    * récupérer les mises à jour de votre projet:
+      ```
+      git pull
+      ```
+    * installer les mises à jour ou nouvelles dépendances Symfony:
+      ```
+      composer install
+      ```
+    * mettez à jour votre base de données:
+      ```
+      php bin/console doctrine:schema:update --force
+      ```
+    * enfin, vous pouvez reprendre le développement !
+      ```
+      php bin/console serveur:run
+      ```
 ### A savoir:
 * Executer une commande composer (linux):
   ```
