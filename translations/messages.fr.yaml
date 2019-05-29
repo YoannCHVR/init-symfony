@@ -1,5 +1,3 @@
-foo: "France"
-
 simulation:
       general:
           unknown: Inconnu
@@ -91,3 +89,63 @@ simulation:
         field7:
           label: Cadence réelle de la ligne (unités/heure)
           placeholder: 6500
+      email:
+        subject: Estimation de performances
+        body:
+          item1: "Bonjour"
+          item2: "Veuillez trouver ci-joint l'estimation de performances réalisée à l'instant sur notre site internet"
+          item3: "N'hésitez pas à revenir vers nous pour une analyse plus détaillée et appropriée"
+          item4: "Bien cordialement"
+      pdf:
+        file:
+          name: Estimation de performances
+        values:
+          field1: (jours/an)
+        header:
+          banner: "fond-pdf-horizontal-fr.jpg"
+        main:
+          array:
+            title: Données saisies par vos soins
+            col1:
+              title: Nombre de jours travailles
+            col2:
+              title: Rotation de travail
+            col3:
+              title: Taux de qualite
+            col4:
+              title: Temps d'arrets prevus
+            col5:
+              title: Temps d'arrets
+              titlebis: non-prevus
+            col6:
+              title: Cadence nominale
+            col7:
+              title: Cadence reelle
+          charts:
+            chart1:
+              title:
+                1: Indicateurs
+                2: agrégés
+              array:
+                title: Taux
+                col1:
+                  item1: Disponibilite
+                  item2: Performance
+                  item3: Qualite
+                end:
+                  content: Temps à valeur ajoutée
+            chart2:
+              title:
+                1: Découpage de votre
+                2: activité (% temps)
+            chart3:
+              title:
+                1: Economies estimées en
+                2: diminuant vos pertes
+            chart4:
+              title:
+                1: Gain de chiffre
+                2: d'affaires potentiel
+        footer:
+          content1: Ces résultats sont des estimations simplifiées sur la base des informations que vous avez saisies
+          content2: Contactez-nous pour une analyse plus détaillée et appropriée à votre situation

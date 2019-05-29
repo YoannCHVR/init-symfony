@@ -7,35 +7,31 @@ use App\Form\SimulationType;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/{_locale}")
- */
 class SimulationController extends AbstractController
 {
     /**
      * @Route("/simulation", name="simulation")
      */
-    public function index(Request $request)
+    public function index(Request $request, TranslatorInterface $translator)
     {
       // Create form
       $form = $this->createForm(SimulationType::class);
 
       // Create request
-
       $form->handleRequest($request);
 
       // After Submit and Valid form
       if ($form->isSubmitted() && $form->isValid()) {
 
-          $data = $form->getData();
-
-          var_dump($data);
-
           /*-----VARIABLE-----*/
+
+          // Form Data
+          $data = $form->getData();
 
           // General Data
           $date = date("d-m-y", time());
@@ -45,9 +41,7 @@ class SimulationController extends AbstractController
           $company = $data['anonymeCompany'];
 
           $first_part_email = explode("@", $email_address);
-
           $first_part_email = $first_part_email[0];
-          var_dump($first_part_email);
 
           // Verifie que l'utilisateur a bien un email, sinon stop le script
           if(empty($email_address)){
@@ -55,7 +49,7 @@ class SimulationController extends AbstractController
           }
 
           if ($company == 'null' || $company == 'NaN' || empty($company) || $company == " ") {
-            $company = "Unknown";
+            $company = $translator->trans('simulation.general.unknown');
           }
 
           // Initial values
@@ -68,43 +62,43 @@ class SimulationController extends AbstractController
           $realCadence = $data['realCadence'];
 
           if ($nbDayWork == 'null' || $nbDayWork == 'NaN' || empty($nbDayWork) || $nbDayWork == " ") {
-            $nbDayWork = "Unknown";
+            $nbDayWork = $translator->trans('simulation.general.unknown');
           } else {
-            $nbDayWork = $data['nbDayWork'] . '&nbsp;(jours/an)';
+            $nbDayWork = $data['nbDayWork'] . '&nbsp;' . $translator->trans('simulation.pdf.values.field1');
           }
 
           if ($workRotation == 'null' || $workRotation == 'NaN' || empty($workRotation) || $workRotation == " ") {
-            $workRotation = "Unknown";
+            $workRotation = $translator->trans('simulation.general.unknown');
           } else {
             $workRotation = $data['workRotation'] . '&nbsp;x&nbsp;8h';
           }
 
           if ($rateQuality == 'null' || $rateQuality == 'NaN' || empty($rateQuality) || $rateQuality == " ") {
-            $rateQuality = "Unknown";
+            $rateQuality = $translator->trans('simulation.general.unknown');
           } else {
             $rateQuality = $data['rateQuality'] . '&nbsp;%';
           }
 
           if ($plannedDowntime == 'null' || $plannedDowntime == 'NaN' || empty($plannedDowntime) || $plannedDowntime == " ") {
-            $plannedDowntime = "Unknown";
+            $plannedDowntime = $translator->trans('simulation.general.unknown');
           } else {
-            $plannedDowntime = $data['plannedDowntime'] . '&nbsp;(jours/an)';
+            $plannedDowntime = $data['plannedDowntime'] . '&nbsp;' . $translator->trans('simulation.pdf.values.field1');
           }
 
           if ($unplannedDowntime == 'null' || $unplannedDowntime == 'NaN' || empty($unplannedDowntime) || $unplannedDowntime == " ") {
-            $unplannedDowntime = "Unknown";
+            $unplannedDowntime = $translator->trans('simulation.general.unknown');
           } else {
-            $unplannedDowntime = $data['unplannedDowntime'] . '&nbsp;(jours/an)';
+            $unplannedDowntime = $data['unplannedDowntime'] . '&nbsp;' . $translator->trans('simulation.pdf.values.field1');
           }
 
           if ($nominalCadence == 'null' || $nominalCadence == 'NaN' || empty($nominalCadence) || $nominalCadence == " ") {
-            $nominalCadence = "Unknown";
+            $nominalCadence = $translator->trans('simulation.general.unknown');
           } else {
             $nominalCadence = $data['nominalCadence'] . '&nbsp;(ut/h)';
           }
 
           if ($realCadence == 'null' || $realCadence == 'NaN' || empty($realCadence) || $realCadence == " ") {
-            $realCadence = "Unknown";
+            $realCadence = $translator->trans('simulation.general.unknown');
           } else {
             $realCadence = $data['realCadence'] . '&nbsp;(ut/h)';
           }
@@ -116,25 +110,25 @@ class SimulationController extends AbstractController
           $AddedValue = $data['AddedValue'];
 
           if ($TauxDispo == 'null' || $TauxDispo == 'NaN' || empty($TauxDispo) || $TauxDispo == " ") {
-            $TauxDispo = "Unknown";
+            $TauxDispo = $translator->trans('simulation.general.unknown');
           } else {
             $TauxDispo = $data['TauxDispo'] . '&nbsp;%';
           }
 
           if ($TauxPerf == 'null' || $TauxPerf == 'NaN' || empty($TauxPerf) || $TauxPerf == " ") {
-            $TauxPerf = "Unknown";
+            $TauxPerf = $translator->trans('simulation.general.unknown');
           } else {
             $TauxPerf = $data['TauxPerf'] . '&nbsp;%';
           }
 
           if ($TauxQuality == 'null' || $TauxQuality == 'NaN' || empty($TauxQuality) || $TauxQuality == " ") {
-            $TauxQuality = "Unknown";
+            $TauxQuality = $translator->trans('simulation.general.unknown');
           } else {
             $TauxQuality = $data['TauxQuality'] . '&nbsp;%';
           }
 
           if ($AddedValue == 'null' || $AddedValue == 'NaN' || empty($AddedValue) || $AddedValue == " ") {
-            $AddedValue = "Unknown";
+            $AddedValue = $translator->trans('simulation.general.unknown');
           } else {
             $AddedValue = $data['AddedValue'] . '&nbsp;%';
           }
@@ -145,25 +139,25 @@ class SimulationController extends AbstractController
           $PerteInex = $data['PerteInex'];
 
           if ($PerteArrets == 'null' || $PerteArrets == 'NaN' || empty($PerteArrets) || $PerteArrets == " ") {
-            $PerteArrets = "Unknown";
+            $PerteArrets = $translator->trans('simulation.general.unknown');
           } else {
             $PerteArrets = $data['PerteArrets'] . '&nbsp;%';
           }
 
           if ($PertePerfs == 'null' || $PertePerfs == 'NaN' || empty($PertePerfs) || $PertePerfs == " ") {
-            $PertePerfs = "Unknown";
+            $PertePerfs = $translator->trans('simulation.general.unknown');
           } else {
             $PertePerfs = $data['PertePerfs'] . '&nbsp;%';
           }
 
           if ($PerteQuality == 'null' || $PerteQuality == 'NaN' || empty($PerteQuality) || $PerteQuality == " ") {
-            $PerteQuality = "Unknown";
+            $PerteQuality = $translator->trans('simulation.general.unknown');
           } else {
             $PerteQuality = $data['PerteQuality'] . '&nbsp;%';
           }
 
           if ($PerteInex == 'null' || $PerteInex == 'NaN' || empty($PerteInex) || $PerteInex == " ") {
-            $PerteInex = "Unknown";
+            $PerteInex = $translator->trans('simulation.general.unknown');
           } else {
             $PerteInex = $data['PerteInex'] . '&nbsp;%';
           }
@@ -201,7 +195,7 @@ class SimulationController extends AbstractController
           body {
             font-family: sans-serif;
             font-size: 10pt;
-            background-image: url("assets/img/backgrounds/fond-pdf-horizontal.jpg");
+            background-image: url("assets/img/backgrounds/' . $translator->trans('simulation.pdf.header.banner') . '");
             background-repeat: no-repeat;
             background-size: cover;
           }
@@ -269,8 +263,8 @@ class SimulationController extends AbstractController
           <htmlpagefooter name="myfooter">
           <div style="border-top: 1px solid rgba(8, 41, 71, 1); font-size: 10pt; text-align: center; padding-top: 15px;">
             <p>
-              Ces résultats sont des estimations simplifiées sur la base des informations que vous avez saisies. <br />
-              Contactez-nous pour une analyse plus détaillée et appropriée à votre situation.
+              ' . $translator->trans('simulation.pdf.footer.content1') . '. <br />
+              ' . $translator->trans('simulation.pdf.footer.content2') . '.
             </p>
           </div>
           </htmlpagefooter>
@@ -297,17 +291,17 @@ class SimulationController extends AbstractController
 
           $html .= '
           <br />
-          <h6 style="color: rgba(8, 41, 71, 1); font-weight: bold; font-size: 12px;">Données saisies par vos soins</h6>
+          <h6 style="color: rgba(8, 41, 71, 1); font-weight: bold; font-size: 12px;">' . $translator->trans('simulation.pdf.main.array.title') . '</h6>
           <table class="items" width="100%" style="font-size: 9pt; border-collapse: collapse; " cellpadding="8">
           <thead>
           <tr>
-          <td style="vertical-align: middle;" width="14.2%">Nombre de jours travailles</td>
-          <td style="vertical-align: middle;" width="14.2%">Rotation de travail</td>
-          <td style="vertical-align: middle;" width="14.2%">Taux de qualite</td>
-          <td style="vertical-align: middle;" width="14.2%">Temps d\'arrets prevus</td>
-          <td style="vertical-align: middle;" width="14.2%">Temps d\'arrets<br /> non-prevus</td>
-          <td style="vertical-align: middle;" width="14.2%">Cadence nominale</td>
-          <td style="vertical-align: middle;" width="14.2%">Cadence reelle</td>
+          <td style="vertical-align: middle;" width="14.2%">' . $translator->trans('simulation.pdf.main.array.col1.title') . '</td>
+          <td style="vertical-align: middle;" width="14.2%">' . $translator->trans('simulation.pdf.main.array.col2.title') . '</td>
+          <td style="vertical-align: middle;" width="14.2%">' . $translator->trans('simulation.pdf.main.array.col3.title') . '</td>
+          <td style="vertical-align: middle;" width="14.2%">' . $translator->trans('simulation.pdf.main.array.col4.title') . '</td>
+          <td style="vertical-align: middle;" width="14.2%">' . $translator->trans('simulation.pdf.main.array.col5.title') . ' <br> ' . $translator->trans('simulation.pdf.main.array.col5.titlebis') . '</td>
+          <td style="vertical-align: middle;" width="14.2%">' . $translator->trans('simulation.pdf.main.array.col6.title') . '</td>
+          <td style="vertical-align: middle;" width="14.2%">' . $translator->trans('simulation.pdf.main.array.col7.title') . '</td>
           </tr>
           </thead>
           <tbody>
@@ -328,16 +322,16 @@ class SimulationController extends AbstractController
 
           <table width="100%" style="color: rgba(8, 41, 71, 1); font-weight: bold; font-size: 12px;">
           <tr>
-          <td style="vertical-align: middle;" width="19%"; align="center">Indicateurs</td>
-          <td style="vertical-align: middle;" width="27%"; align="center">Découpage de votre</td>
-          <td style="vertical-align: middle;" width="27%"; align="center">Economies estimées en</td>
-          <td style="vertical-align: middle;" width="27%"; align="center">Gain de chiffre</td>
+          <td style="vertical-align: middle;" width="19%"; align="center">' . $translator->trans('simulation.pdf.main.charts.chart1.title.1') . '</td>
+          <td style="vertical-align: middle;" width="27%"; align="center">' . $translator->trans('simulation.pdf.main.charts.chart2.title.1') . '</td>
+          <td style="vertical-align: middle;" width="27%"; align="center">' . $translator->trans('simulation.pdf.main.charts.chart3.title.1') . '</td>
+          <td style="vertical-align: middle;" width="27%"; align="center">' . $translator->trans('simulation.pdf.main.charts.chart4.title.1') . '</td>
           </tr>
           <tr>
-          <td style="vertical-align: middle;" width="19%"; align="center">agrégés</td>
-          <td style="vertical-align: middle;" width="27%"; align="center">activité (% temps)</td>
-          <td style="vertical-align: middle;" width="27%"; align="center">diminuant vos pertes</td>
-          <td style="vertical-align: middle;" width="27%"; align="center">d\'affaires potentiel </td>
+          <td style="vertical-align: middle;" width="19%"; align="center">' . $translator->trans('simulation.pdf.main.charts.chart1.title.2') . '</td>
+          <td style="vertical-align: middle;" width="27%"; align="center">' . $translator->trans('simulation.pdf.main.charts.chart2.title.2') . '</td>
+          <td style="vertical-align: middle;" width="27%"; align="center">' . $translator->trans('simulation.pdf.main.charts.chart3.title.2') . '</td>
+          <td style="vertical-align: middle;" width="27%"; align="center">' . $translator->trans('simulation.pdf.main.charts.chart4.title.2') . '</td>
           </tr>
           </table>
 
@@ -347,26 +341,26 @@ class SimulationController extends AbstractController
             <table align="center" class="items" width="100%" style="font-size: 9pt; border-collapse: collapse; " cellpadding="8">
             <thead>
               <tr>
-              <td style="vertical-align: middle;" colspan="2" width="100%">Taux</td>
+              <td style="vertical-align: middle;" colspan="2" width="100%">' . $translator->trans('simulation.pdf.main.charts.chart1.array.title') . '</td>
               </tr>
             </thead>
             <tbody>
             <!-- ITEMS HERE -->
               <tr class="bottom-border: 1px solid black;">
-              <td class="thead-item" width="50%">Disponibilite</td>
+              <td class="thead-item" width="50%">' . $translator->trans('simulation.pdf.main.charts.chart1.array.col1.item1') . '</td>
               <td width="50%" align="center">' . $TauxDispo . '</td>
               </tr>
               <tr class="bottom-border: 1px solid black;">
-              <td class="thead-item">Performance</td>
+              <td class="thead-item">' . $translator->trans('simulation.pdf.main.charts.chart1.array.col1.item2') . '</td>
               <td align="center">' . $TauxPerf . '</td>
               </tr>
               <tr class="bottom-border: 1px solid black;">
-              <td class="thead-item">Qualite</td>
+              <td class="thead-item">' . $translator->trans('simulation.pdf.main.charts.chart1.array.col1.item3') . '</td>
               <td align="center">' . $TauxQuality . '</td>
               </tr>
               <tr>
               <td align="center" colspan="2" cellpadding="15">
-              <p><br />Temps à valeur ajoutée<br /> <b>' . $AddedValue . '</b><br /><br /><br /></p>
+              <p><br />' . $translator->trans('simulation.pdf.main.charts.chart1.array.end.content') . '<br /> <b>' . $AddedValue . '</b><br /><br /><br /></p>
               </td>
               </tr>
             </tbody>
@@ -423,12 +417,13 @@ class SimulationController extends AbstractController
 
           $email = new PHPMailer();
           $email->SetFrom('contact@kipers-industries.com', 'Kipers Industries'); //Name is optional
-          $email->Subject = 'Estimation de performances - Kipers Industries - ' . $date;
+          $email->Subject = $translator->trans('simulation.email.subject') . ' - Kipers Industries - ' . $date;
           // Allow HTML in mail
           $email->IsHTML(true);
           $email->Encoding = 'quoted-printable';
           // Ajout du PDF dans le mail
-          $email->AddAttachment( $file_to_attach . $fname, 'Kipers Industries - Estimation de Performances.pdf' );
+          echo $translator->trans('simulation.pdf.file.name');
+          $email->AddAttachment( $file_to_attach . $fname, 'Kipers Industries - ' . $translator->trans('simulation.pdf.file.name') . $extension);
           // Ajout des images pour la signature
           $email->AddEmbeddedImage('assets/img/signature/kipers.png', 'kipers_logo');
           $email->AddEmbeddedImage('assets/img/signature/logo_facebook.gif', 'facebook_logo');
@@ -468,18 +463,18 @@ class SimulationController extends AbstractController
           </tbody>
           </table>';
           // Content message to Body mail
-          $msghtml = '
-          Bonjour,<br /><br />
-          Veuillez trouver ci-joint l\'estimation de performances réalisée à l\'instant sur notre site internet.<br />
-          N\'hésitez pas à revenir vers nous pour une analyse plus détaillée et appropriée.<br /><br />
-          Bien cordialement,<br /><br />
+          $msghtml =
+          $translator->trans('simulation.email.body.item1') . ',<br /><br />
+          ' . $translator->trans('simulation.email.body.item2') . '.<br />
+          ' . $translator->trans('simulation.email.body.item3') . '.<br /><br />
+          ' . $translator->trans('simulation.email.body.item4') . ',<br /><br />
           Kipers Industries.<br /><br />
           -----<br /><br />
           ' . $signature . '
           ';
           $email->Body = $msghtml;
-          // Use for client who doesn't use HTML inbox email
-          $email->AltBody = "\nBonjour,\n\n Veuillez trouver ci-joint l'estimation de performances à l'instant sur notre site internet.\n N'hésitez pas à revenir vers nous pour une analyse plus détaillée et appropriée.\n\n Bien cordialement,\n\n Kipers Industries\n";
+          // Used for client who doesn't use HTML inbox email
+          $email->AltBody = "\n " . $translator->trans('simulation.email.body.item1') . ",\n\n " . $translator->trans('simulation.email.body.item2') . ".\n " . $translator->trans('simulation.email.body.item3') . ".\n\n " . $translator->trans('simulation.email.body.item4') . ",\n\n Kipers Industries\n";
           $email->AddAddress( $email_address );
           $email->CharSet = 'UTF-8';
 

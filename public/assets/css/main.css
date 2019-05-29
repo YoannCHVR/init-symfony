@@ -477,7 +477,7 @@ main .article h5 {
 
 /* ------- process item last splitter  ------- */
 
-#process div.row > div:last-of-type div.process-item:after {
+#process div.row > div:nth-child(4) div.process-item:after {
   border: 0;
 }
 

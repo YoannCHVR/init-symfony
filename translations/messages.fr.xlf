@@ -5,10 +5,6 @@
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
     <body>
-      <trans-unit id="LCa0a2j" resname="foo">
-        <source>foo</source>
-        <target>Bite</target>
-      </trans-unit>
       <trans-unit id="yJVC5sU" resname="simulation.general.unknown">
         <source>simulation.general.unknown</source>
         <target>Inconnu</target>
@@ -149,6 +145,34 @@
         <source>simulation.index.charts.chart3.text.item2</source>
         <target>€ ; gain de CA potentiel</target>
       </trans-unit>
+      <trans-unit id="w811Hm2" resname="simulation.index.keepintouch.content1.title">
+        <source>simulation.index.keepintouch.content1.title</source>
+        <target>Envie de recevoir le compte rendu par mail ?</target>
+      </trans-unit>
+      <trans-unit id="PoxVD8e" resname="simulation.index.keepintouch.content1.form.placeholder1">
+        <source>simulation.index.keepintouch.content1.form.placeholder1</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="UKKeqft" resname="simulation.index.keepintouch.content1.form.placeholder2">
+        <source>simulation.index.keepintouch.content1.form.placeholder2</source>
+        <target>Entreprise</target>
+      </trans-unit>
+      <trans-unit id="tvvWvcz" resname="simulation.index.keepintouch.content1.form.button">
+        <source>simulation.index.keepintouch.content1.form.button</source>
+        <target>Recevoir le pdf</target>
+      </trans-unit>
+      <trans-unit id="sjOiZ2a" resname="simulation.index.keepintouch.content1.form.info">
+        <source>simulation.index.keepintouch.content1.form.info</source>
+        <target>Les données collectées servent à la génération de votre pdf</target>
+      </trans-unit>
+      <trans-unit id="qjA74gL" resname="simulation.index.keepintouch.content2.title">
+        <source>simulation.index.keepintouch.content2.title</source>
+        <target>Des explications ? Une analyse plus détaillée ?</target>
+      </trans-unit>
+      <trans-unit id="l8F8_ma" resname="simulation.index.keepintouch.content2.button">
+        <source>simulation.index.keepintouch.content2.button</source>
+        <target>Contactez-nous</target>
+      </trans-unit>
       <trans-unit id="lJ3NbqC" resname="simulation.form.field1.label">
         <source>simulation.form.field1.label</source>
         <target>Nombre de jours travaillés (par an)</target>
@@ -208,6 +232,138 @@
       <trans-unit id="ttyo47k" resname="simulation.form.field7.placeholder">
         <source>simulation.form.field7.placeholder</source>
         <target>6500</target>
+      </trans-unit>
+      <trans-unit id="OHJ9Aeq" resname="simulation.email.subject">
+        <source>simulation.email.subject</source>
+        <target>Estimation de performances</target>
+      </trans-unit>
+      <trans-unit id="4X4e2aP" resname="simulation.email.body.item1">
+        <source>simulation.email.body.item1</source>
+        <target>Bonjour</target>
+      </trans-unit>
+      <trans-unit id="5fR0W08" resname="simulation.email.body.item2">
+        <source>simulation.email.body.item2</source>
+        <target>Veuillez trouver ci-joint l'estimation de performances réalisée à l'instant sur notre site internet</target>
+      </trans-unit>
+      <trans-unit id="cvXjrfo" resname="simulation.email.body.item3">
+        <source>simulation.email.body.item3</source>
+        <target>N'hésitez pas à revenir vers nous pour une analyse plus détaillée et appropriée</target>
+      </trans-unit>
+      <trans-unit id="y2Kh9qE" resname="simulation.email.body.item4">
+        <source>simulation.email.body.item4</source>
+        <target>Bien cordialement</target>
+      </trans-unit>
+      <trans-unit id="JuM5JLL" resname="simulation.pdf.file.name">
+        <source>simulation.pdf.file.name</source>
+        <target>Estimation de performances</target>
+      </trans-unit>
+      <trans-unit id="JS8ZJGA" resname="simulation.pdf.values.field1">
+        <source>simulation.pdf.values.field1</source>
+        <target>(jours/an)</target>
+      </trans-unit>
+      <trans-unit id="LDUqXe6" resname="simulation.pdf.header.banner">
+        <source>simulation.pdf.header.banner</source>
+        <target>fond-pdf-horizontal.jpg</target>
+      </trans-unit>
+      <trans-unit id="auwhe0C" resname="simulation.pdf.main.array.title">
+        <source>simulation.pdf.main.array.title</source>
+        <target>Données saisies par vos soins</target>
+      </trans-unit>
+      <trans-unit id="NX_JbQc" resname="simulation.pdf.main.array.col1.title">
+        <source>simulation.pdf.main.array.col1.title</source>
+        <target>Nombre de jours travailles</target>
+      </trans-unit>
+      <trans-unit id="W_ojbpQ" resname="simulation.pdf.main.array.col2.title">
+        <source>simulation.pdf.main.array.col2.title</source>
+        <target>Rotation de travail</target>
+      </trans-unit>
+      <trans-unit id="BZGeGZb" resname="simulation.pdf.main.array.col3.title">
+        <source>simulation.pdf.main.array.col3.title</source>
+        <target>Taux de qualite</target>
+      </trans-unit>
+      <trans-unit id="6KYJOV9" resname="simulation.pdf.main.array.col4.title">
+        <source>simulation.pdf.main.array.col4.title</source>
+        <target>Temps d'arrets prevus</target>
+      </trans-unit>
+      <trans-unit id="om8oZVQ" resname="simulation.pdf.main.array.col5.title">
+        <source>simulation.pdf.main.array.col5.title</source>
+        <target>Temps d'arrets</target>
+      </trans-unit>
+      <trans-unit id="AkuGP3_" resname="simulation.pdf.main.array.col5.titlebis">
+        <source>simulation.pdf.main.array.col5.titlebis</source>
+        <target>non-prevus</target>
+      </trans-unit>
+      <trans-unit id="xPd4a71" resname="simulation.pdf.main.array.col6.title">
+        <source>simulation.pdf.main.array.col6.title</source>
+        <target>Cadence nominale</target>
+      </trans-unit>
+      <trans-unit id="zjQaI6y" resname="simulation.pdf.main.array.col7.title">
+        <source>simulation.pdf.main.array.col7.title</source>
+        <target>Cadence reelle</target>
+      </trans-unit>
+      <trans-unit id="Cq6IQga" resname="simulation.pdf.main.charts.chart1.title.1">
+        <source>simulation.pdf.main.charts.chart1.title.1</source>
+        <target>Indicateurs</target>
+      </trans-unit>
+      <trans-unit id="exGHWQC" resname="simulation.pdf.main.charts.chart1.title.2">
+        <source>simulation.pdf.main.charts.chart1.title.2</source>
+        <target>agrégés</target>
+      </trans-unit>
+      <trans-unit id="HUN.m6X" resname="simulation.pdf.main.charts.chart1.array.title">
+        <source>simulation.pdf.main.charts.chart1.array.title</source>
+        <target>Taux</target>
+      </trans-unit>
+      <trans-unit id="9ty2bL." resname="simulation.pdf.main.charts.chart1.array.col1.item1">
+        <source>simulation.pdf.main.charts.chart1.array.col1.item1</source>
+        <target>Disponibilite</target>
+      </trans-unit>
+      <trans-unit id="OTJPi2p" resname="simulation.pdf.main.charts.chart1.array.col1.item2">
+        <source>simulation.pdf.main.charts.chart1.array.col1.item2</source>
+        <target>Performance</target>
+      </trans-unit>
+      <trans-unit id="DfEiMon" resname="simulation.pdf.main.charts.chart1.array.col1.item3">
+        <source>simulation.pdf.main.charts.chart1.array.col1.item3</source>
+        <target>Qualite</target>
+      </trans-unit>
+      <trans-unit id="6RvGysI" resname="simulation.pdf.main.charts.chart1.array.end.content">
+        <source>simulation.pdf.main.charts.chart1.array.end.content</source>
+        <target>Temps à valeur ajoutée</target>
+      </trans-unit>
+      <trans-unit id="VmE5A97" resname="simulation.pdf.main.charts.chart2.title.1">
+        <source>simulation.pdf.main.charts.chart2.title.1</source>
+        <target>Découpage de votre</target>
+      </trans-unit>
+      <trans-unit id="QzHibtt" resname="simulation.pdf.main.charts.chart2.title.2">
+        <source>simulation.pdf.main.charts.chart2.title.2</source>
+        <target>activité (% temps)</target>
+      </trans-unit>
+      <trans-unit id="OEh00cB" resname="simulation.pdf.main.charts.chart3.title.1">
+        <source>simulation.pdf.main.charts.chart3.title.1</source>
+        <target>Economies estimées en</target>
+      </trans-unit>
+      <trans-unit id="mDYP0JS" resname="simulation.pdf.main.charts.chart3.title.2">
+        <source>simulation.pdf.main.charts.chart3.title.2</source>
+        <target>diminuant vos pertes</target>
+      </trans-unit>
+      <trans-unit id="BzfBkU0" resname="simulation.pdf.main.charts.chart4.title.1">
+        <source>simulation.pdf.main.charts.chart4.title.1</source>
+        <target>Gain de chiffre</target>
+      </trans-unit>
+      <trans-unit id="nKBwJZu" resname="simulation.pdf.main.charts.chart4.title.2">
+        <source>simulation.pdf.main.charts.chart4.title.2</source>
+        <target>d'affaires potentiel</target>
+      </trans-unit>
+      <trans-unit id="urJ9r_U" resname="simulation.pdf.footer.content1">
+        <source>simulation.pdf.footer.content1</source>
+        <target>Ces résultats sont des estimations simplifiées sur la base des informations que vous avez saisies</target>
+      </trans-unit>
+      <trans-unit id="ZBu0fEN" resname="simulation.pdf.footer.content2">
+        <source>simulation.pdf.footer.content2</source>
+        <target>Contactez-nous pour une analyse plus détaillée et appropriée à votre situation</target>
+      </trans-unit>
+      <trans-unit id="LCa0a2j" resname="foo">
+        <source>foo</source>
+        <target>Bite</target>
       </trans-unit>
       <trans-unit id="IeuegCe" resname="simulation.index.charts.array">
         <source>simulation.index.charts.array</source>

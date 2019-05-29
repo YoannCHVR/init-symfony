@@ -89,3 +89,63 @@ simulation:
         field7:
           label: Real line speed (units/hour)
           placeholder: 6500
+      email:
+        subject: Performances estimation
+        body:
+          item1: "Hello"
+          item2: "Please find attached the performance estimate currently available on our website"
+          item3: "Feel free to come back to us for a more detailed and appropriate analysis"
+          item4: "Best regards"
+      pdf:
+        file:
+          name: Performances estimation
+        values:
+          field1: (days/year)
+        header:
+          banner: "fond-pdf-horizontal-en.jpg"
+        main:
+          array:
+            title: Data entered by you
+            col1:
+              title: Number of working days
+            col2:
+              title: Work rotation
+            col3:
+              title: Quality rate
+            col4:
+              title: Planned downtime
+            col5:
+              title: Unplanned
+              titlebis: downtine
+            col6:
+              title: Nominal line speed
+            col7:
+              title: Real line speed
+          charts:
+            chart1:
+              title:
+                1: Aggregate
+                2: indicators
+              array:
+                title: Rates
+                col1:
+                  item1: Availability
+                  item2: Performance
+                  item3: Quality
+                end:
+                  content: Added-values time
+            chart2:
+              title:
+                1: Breakdown of your
+                2: activity (% time)
+            chart3:
+              title:
+                1: Estimated savings by
+                2: reducing your losses
+            chart4:
+              title:
+                1: Potential revenue
+                2: gain
+        footer:
+          content1: These results are simplified estimates based on the information you have entered
+          content2: Contact us for a more detailed analysis appropriate to your situation
