@@ -82,7 +82,7 @@
         <div class="col-12 col-lg-6 mb-5 mb-lg-0">
           <div class="row justify-content-center">
             <div style="width: 400px;">
-              <img class="w-100" src="assets/img/icons/kipers_process.svg" alt=""/>
+              <img class="w-100" src="{{ asset('assets/img/icons/kipers_process.svg') }}" alt=""/>
             </div>
           </div>
         </div>
@@ -195,7 +195,7 @@
         <div class="col-12 col-lg-6 mt-5 mt-lg-0">
           <div class="row justify-content-center">
             <div style="width: 400px;">
-              <img class="w-100" src="assets/img/icons/benefices-pourFondBlanc-Vector.svg" alt=""/>
+              <img class="w-100" src="{{ asset('assets/img/icons/benefices-pourFondBlanc-Vector.svg') }}" alt=""/>
             </div>
           </div>
         </div>
@@ -225,9 +225,9 @@
 
             <div class="col-12 col-lg-6 p-0">
               <!-- Image displayed when it's a large screen -->
-              <img class="d-none d-lg-block" src="assets/img/backgrounds/simulation.jpg" alt="">
+              <img class="d-none d-lg-block" src="{{ asset('assets/img/backgrounds/simulation.jpg') }}" alt="">
               <!-- Image displayed when it's a smartphone / small screen -->
-              <img class="w-100 d-block d-lg-none mt-4" src="assets/img/backgrounds/simulation.jpg" alt="">
+              <img class="w-100 d-block d-lg-none mt-4" src="{{ asset('assets/img/backgrounds/simulation.jpg') }}" alt="">
             </div>
           </div>
         </div>
@@ -262,7 +262,7 @@
             </div>
 
             <div class="col-6">
-              <img class="w-100" src="assets/img/icons/benefices-sansfond2.svg" alt=""/>
+              <img class="w-100" src="{{ asset('assets/img/icons/benefices-sansfond2.svg') }}" alt=""/>
             </div>
           </div>
         </div>
@@ -348,9 +348,9 @@
 
     $('.fullBackground').fullClip({
       images: [
-        '{{ asset(' assets / img / slider / background_1.jpg ') }}',
-        'assets/img/slider/background.jpg',
-        'assets/img/slider/background_2.jpg'
+        '{{ asset('assets/img/slider/background_1.jpg ') }}',
+        '{{ asset('assets/img/slider/background.jpg') }}',
+        '{{ asset('assets/img/slider/background_2.jpg') }}'
       ],
       transitionTime: 100,
       wait: 5200
