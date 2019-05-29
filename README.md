@@ -115,6 +115,7 @@
   ['PublishedAt'=> 'DESC']
  );
  ```
+#### Traductions:
 
 ### Entity:
 > Dossier où sont regroupés les entitées. Elles permettent de créer la base de données et de pouvoir faire
@@ -179,7 +180,49 @@
   ```
   > Remarque: base.html.twig est notre template de base avec head/header/footer,
   > qu'on importe ensuite sur chaque page.
+
+#### Traductions:
+
 ### Translation: 
-
-
+  > Dossier où sont regroupés les traductions. Chaque template est répertorié dans un dossier qui lui est propre.
+  * Hiérarchie d'une page traduction :
+  ```
+  nom_de_la_page:
+      general:
+          item_exemple: 
+      index:
+        header:
+            item_exemple: 
+            item_exemple:
+        content:
+            item_exemple: 
+            item_exemple:
+                item_exemple: 
+                item_exemple: 
+            item_exemple:
+                item_exemple: "
+                item_exemple: 
+        form:
+            item_exemple: 
+  ```
+  * Exemple des traductions possibles de la page CGU :
+  ```
+  cgu:
+      general:
+          unknown: 
+      index:
+        header:
+            title1: 
+            title2:
+        simulation:
+            title: 
+            intro1:
+                title: 
+                content: 
+            intro2:
+                title: "
+                content: 
+        form:
+            content: 
+  ```
 ## VueJS:
