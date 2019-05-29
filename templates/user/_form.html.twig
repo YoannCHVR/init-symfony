@@ -1,0 +1,81 @@
+<!-- FORM -->
+{{ form_start(form) }}
+    <!-- USERNAME -->
+    {# Username label #}
+    {{ form_label(form.username,
+        'Nom',
+        {'label_attr': {
+          'class': 'col-sm-12'
+          }
+        }
+      )
+    }}
+    {# Username Input #}
+    {{ form_widget(form.username,
+        {'attr': {
+          'class': 'col-sm-12',
+          'placeholder': 'Identifiant'
+          }
+        }
+      )
+    }}
+
+    <!-- Password -->
+    {# Password label #}
+    {{ form_label(form.password.first,
+        'Mot de passe',
+        {'label_attr': {
+          'class': 'col-sm-12'
+          }
+        }
+      )
+    }}
+    {# Displayed password errors #}
+    {{ form_errors(form.password) }}
+    {# Password Input #}
+    {{ form_widget(form.password.first,
+        {'attr': {
+          'class': 'col-sm-12',
+          'placeholder': 'A*****9'
+          }
+        }
+      )
+    }}
+
+    <!-- Password Confirmation -->
+    {# Email Confirmation label #}
+    {{ form_label(form.password.second,
+        'Confirmer le mdp',
+        {'label_attr': {
+          'class': 'col-sm-12'
+          }
+        }
+      )
+    }}
+    {# Password Confirmation Input #}
+    {{ form_widget(form.password.second,
+        {'attr': {
+          'class': 'col-sm-12',
+          'placeholder': 'A*****9'
+          }
+        }
+      )
+    }}
+
+    {# Checkbox Input for Terms and conditions #}
+    <input type="checkbox" required name="terms">
+    Accepter les CGU
+    <a href="#">
+      <u>
+        JSPLUS
+      </u>
+    </a>
+
+    {# Submit button #}
+    <div class="row mt-4">
+      <button class="btn btn-primary mx-auto">
+        Enregistrer
+      </button>
+    </div>
+{{ form_end(form) }}
+<!-- End FORM -->

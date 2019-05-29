@@ -1,0 +1,50 @@
+{# HEADER / FOOTER #}
+{% extends 'base.html.twig' %}
+
+{# Title Page #}
+{% block title %}
+  Inscription
+{% endblock %}
+
+{# CSS : Individual Page #}
+{% block stylesheets %}{% endblock %}
+
+{# JS : Individual Page #}
+{% block javascripts %}{% endblock %}
+
+{# BODY : Individual Page #}
+{% block body %}
+
+<!-- Header with background image -->
+<header id="bg-sep" class="bg-section container-fluid">
+  <div class="row m-0">
+    <!-- Content -->
+    <div class="container py-header-section">
+      <div class="row">
+        <!-- Responsive col -->
+        <div class="col-10 col-lg-8 mx-auto ">
+          <!-- Header text -->
+          <p class="bg-title text-center text-white">
+            Solutions de suivi, d'analyse et d'anticipation des performances
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- End Header -->
+
+<!-- Main -->
+<main class="p-0">
+  <!--Form container-->
+  <div class="container justify-content-center mt-5 mb-5">
+    <div class="row flex-column w-50 mx-auto">
+      <!--FORM-->
+      {{ include('user/_form.html.twig') }}
+      <!--End FORM-->
+    </div>
+  </div>
+  <!--End Form container-->
+</main>
+
+{% endblock %}

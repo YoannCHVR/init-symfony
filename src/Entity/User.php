@@ -3,11 +3,14 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity("username")
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -19,62 +22,113 @@ class User
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Username;
+    private $username;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="boolean")
      */
-    private $Password;
+    private $admin;
 
     /**
-     * @ORM\Column(type="smallint")
+     * @var string The hashed password
+     * @ORM\Column(type="string")
      */
-    private $Admin;
+    private $password;
 
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\Article", mappedBy="Author", cascade={"persist", "remove"})
      */
     private $article;
 
+    public function __construct()
+    {
+        $this->admin = false;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * @see UserInterface
+     */
     public function getUsername(): ?string
     {
-        return $this->Username;
+        return $this->username;
     }
 
-    public function setUsername(string $Username): self
+    public function setUsername(string $username): self
     {
-        $this->Username = $Username;
+        $this->username = $username;
 
         return $this;
     }
 
-    public function getPassword(): ?string
+    public function __toString()
     {
-        return $this->Password;
+        return $this->getUsername();
     }
 
-    public function setPassword(string $Password): self
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
     {
-        $this->Password = $Password;
+        $roles = [];
+
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        if ($this->getAdmin()) {
+            $roles[] = 'ROLE_ADMIN';
+        }
+
+        return array_unique($roles);
+    }
+
+    public function getAdmin(): ?bool
+    {
+        return $this->admin;
+    }
+
+    public function setAdmin(bool $admin): self
+    {
+        $this->admin = $admin;
 
         return $this;
     }
 
-    public function getAdmin(): ?int
+    /**
+     * @see UserInterface
+     */
+    public function getPassword(): string
     {
-        return $this->Admin;
+        return (string) $this->password;
     }
 
-    public function setAdmin(int $Admin): self
+    public function setPassword(string $password): self
     {
-        $this->Admin = $Admin;
+        $this->password = $password;
 
         return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getSalt()
+    {
+        // not needed when using the "bcrypt" algorithm in security.yaml
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 
     public function getArticle(): ?Article
@@ -82,6 +136,9 @@ class User
         return $this->article;
     }
 
+    /**
+     * @return Article
+     */
     public function setArticle(Article $article): self
     {
         $this->article = $article;
