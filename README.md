@@ -310,7 +310,7 @@
                 item_exemple: 
                 item_exemple: 
             item_exemple:
-                item_exemple: "
+                item_exemple:
                 item_exemple: 
         form:
             item_exemple: 
@@ -330,7 +330,7 @@
                 title: 
                 content: 
             intro2:
-                title: "
+                title:
                 content: 
         form:
             content: 
@@ -339,6 +339,6 @@
   > (surement à cause de ' ou : alors mettre la traduction entre "traduction").
   
   > Note: Si les traductions ne prennent pas effet, nettoyer le cache de Symfony,
-  > ainsi que des messages avec les commandes ci-dessus.
+  > ainsi que des messages avec les commandes [ci-dessus](https://github.com/YoannCHVR/init-symfony/blob/master/README.md#a-savoir).
   
 ## VueJS:
