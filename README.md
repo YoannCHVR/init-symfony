@@ -33,6 +33,7 @@
       ```
       php bin/console serveur:run
       ```
+      
 ### Utilisation récurrente:
 * Après plusieurs utilisation, les procédures sont un peu différentes:
     * lancer toujours Wampserver avant toute chose, pour avoir accès à votre base de données
@@ -52,6 +53,7 @@
       ```
       php bin/console serveur:run
       ```
+      
 ### A savoir:
 * Executer une commande composer (linux):
   ```
@@ -61,7 +63,18 @@
   ```
   php composer.phar require
   ```
-
+* Nettoyer le cache de Symfony:
+  ```
+  php bin/console cache:clear
+  ```
+* Nettoyer le cache des messages de traduction:
+  ```
+  php bin/console translation:update --dump-messages --force fr
+  ```
+  ```
+  php bin/console translation:update --dump-messages --force en
+  ```
+  
 ## Symfony:
 ### Commandes:
 #### Symfony:
@@ -73,6 +86,7 @@
   ```
   php bin/console
   ```
+  
 #### Composer:
 * Ajouter des dépendances:
   ```
@@ -82,6 +96,7 @@
   ```
   composer install
   ```
+  
 #### Doctrine:
 * Vérifier la connexion à la base de données:
   ```
@@ -167,7 +182,31 @@
   ['PublishedAt'=> 'DESC']
  );
  ```
+ 
 #### Traductions:
+* Pour ajouter des traductions au niveau des "Controllers" (PHP), il y a plusieurs procédures à suivre:
+   * Premièrement, il faut ajouter dans les "use", en en-tête du controller la ligne suivante:
+   ```
+   use Symfony\Contracts\Translation\TranslatorInterface;
+   ```
+   * Ensuite, il faut ajouter cette "dépendance" dans la fonction du controller où seront créées les traductions:
+   ```
+   public function index(TranslatorInterface $translator)
+    {
+      //Your code here
+    }
+   ```
+   * Nous pouvons maintenant accéder à la fonction de traduction grâce à la variable $translator:
+   ```
+   $translator->trans('translation.is.here');
+   ```
+   * Voici un exemple de traduction:
+   ```
+   public function index(TranslatorInterface $translator)
+    {
+      echo $translator->trans('cgu.general.unknown');
+    }
+   ```
 
 ### Entity:
 > Dossier où sont regroupés les entitées. Elles permettent de créer la base de données et de pouvoir faire
@@ -234,7 +273,26 @@
   > qu'on importe ensuite sur chaque page.
 
 #### Traductions:
-
+* Il y a deux types de traductions possibles pour les templates:
+   * Celui directement dans la vue (HTML):
+      ```
+      {{ 'translation.is.here'|trans }}
+      ```
+      * Ce qui donne plus concrètement:
+      ```
+      {{ 'cgu.general.unknown'|trans }}
+      ```
+   * Et il y a celui dans le code Javascript:
+      ```
+      Translator.trans('translation.is.here');
+      ```
+      * Ce qui donne plus concrètement:
+       ```
+      <script type="text/javascript">
+         Translator.trans('cgu.general.unknown');
+      </script>
+      ```
+      
 ### Translation: 
   > Dossier où sont regroupés les traductions. Chaque template est répertorié dans un dossier qui lui est propre.
   * Hiérarchie d'une page traduction :
@@ -279,4 +337,8 @@
   ```
   > Remarque: Si Symfony dit qu'il y a une erreur dans la traduction
   > (surement à cause de ' ou : alors mettre la traduction entre "traduction").
+  
+  > Note: Si les traductions ne prennent pas effet, nettoyer le cache de Symfony,
+  > ainsi que des messages avec les commandes ci-dessus.
+  
 ## VueJS:
