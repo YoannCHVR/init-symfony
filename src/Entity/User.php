@@ -36,7 +36,7 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Article", mappedBy="Author", cascade={"persist", "remove"})
+     * @ORM\OneToMany(targetEntity="App\Entity\Article", mappedBy="Author", cascade={"persist", "remove"})
      */
     private $article;
 
@@ -136,9 +136,6 @@ class User implements UserInterface
         return $this->article;
     }
 
-    /**
-     * @return Article
-     */
     public function setArticle(Article $article): self
     {
         $this->article = $article;
