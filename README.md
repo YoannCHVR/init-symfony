@@ -74,6 +74,8 @@
   ```
   php bin/console translation:update --dump-messages --force en
   ```
+  > un clear du cache peut-être aussi nécessaire si le nettoyage
+  > du cache précédent pour les traductions ne suffit pas.
   
 ## Symfony:
 ### Commandes:
