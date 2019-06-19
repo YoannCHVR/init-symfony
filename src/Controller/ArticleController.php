@@ -52,6 +52,33 @@ class ArticleController extends AbstractController
         // After Submit and Valid form
         if ($form->isSubmitted() && $form->isValid()) {
           $article->setAuthor($author);
+
+          // Get Image in file type
+          $imageArticle = $form->get('image')->getData();
+
+          if ( $imageArticle ) {
+            // Generate name file and add extension
+            $imageName = md5(uniqid()) .'.' . $imageArticle->guessExtension();
+            // Makes image in your public folder
+            $imageArticle->move($this->getParameter('image_article_upload_path'), $imageName);
+            // Add it for database
+            $article->setImage($imageName);
+          }
+
+          // Get File in file type
+          $fileArticle = $form->get('file')->getData();
+
+          echo $fileArticle;
+
+          if ( $fileArticle ) {
+            // Generate name file and add extension
+            $fileName = md5(uniqid()) .'.' . $fileArticle->guessExtension();
+            // Makes image in your public folder
+            $fileArticle->move($this->getParameter('file_article_upload_path'), $fileName);
+            // Add it for database
+            $article->setFile($fileName);
+          }
+
           $article->setPublishedAt($currentDate);
 
           $em->persist($article);

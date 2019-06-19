@@ -1,2 +1,178 @@
 {# templates/article/new.html.twig #}
-{{ form(form) }}
+
+<!-- FORM -->
+{{ form_start(form,
+    {'attr': {
+      'class': 'col-12'
+      }
+    })
+}}
+
+  <!-- title -->
+  <div class="form-row">
+    <!-- title section -->
+    <div class="form-group col-12">
+      <!-- title -->
+      {# title label #}
+      {{ form_label(form.title,
+          'Titre *',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed title errors #}
+      {{ form_errors(form.title) }}
+      {# title Input #}
+      {{ form_widget(form.title,
+          {'attr': {
+            'class': 'form-control',
+            'placeholder': 'Titre'
+            }
+          }
+        )
+      }}
+    </div>
+  </div>
+
+  <!-- synopsis & COMPANY -->
+  <div class="form-row">
+    <!-- synopsis section -->
+    <div class="form-group col-md-6">
+      {# synopsis label #}
+      {{ form_label(form.synopsis,
+          'Synopsis *',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed synopsis errors #}
+      {{ form_errors(form.synopsis) }}
+      {# synopsis Input #}
+      {{ form_widget(form.synopsis,
+          {'attr': {
+            'class': 'form-control',
+            'placeholder': 'Synopsis'
+            }
+          }
+        )
+      }}
+    </div>
+
+    <!-- content section -->
+    <div class="form-group col-md-6">
+      <!-- content -->
+      {# content label #}
+      {{ form_label(form.content,
+          'Contenu',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed content errors #}
+      {{ form_errors(form.content) }}
+      {# content Input #}
+      {{ form_widget(form.content,
+          {'attr': {
+            'class': 'form-control',
+            'placeholder': 'Contenu'
+            }
+          }
+        )
+      }}
+    </div>
+  </div>
+
+  <!-- image & File -->
+  <div class="form-row">
+    <!-- image section -->
+    <div class="form-group col-md-6">
+      {# image label #}
+      {{ form_label(form.image,
+          'Image *',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed image errors #}
+      {{ form_errors(form.image) }}
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <!-- Before text -->
+          <span class="input-group-text">
+            Upload
+          </span>
+        </div>
+        <!-- File input -->
+        <div class="custom-file">
+          <label class="custom-file-label" for="file">
+            Choisir un fichier
+          </label>
+          {{ form_widget(form.image,
+              {'attr': {
+                'class': 'custom-file-input',
+                'placeholder': 'Image'
+                }
+              }
+            )
+          }}
+        </div>
+      </div>
+    </div>
+
+    <!-- File section -->
+    <div class="form-group col-md-6">
+      {# file label #}
+      {{ form_label(form.file,
+          'Fichier joint',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed file errors #}
+      {{ form_errors(form.file) }}
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <!-- Before text -->
+          <span class="input-group-text">
+            Upload
+          </span>
+        </div>
+        <!-- File input -->
+        <div class="custom-file">
+          <label class="custom-file-label" for="file">
+            Choisir un fichier
+          </label>
+          {# file Input #}
+          {{ form_widget(form.file,
+              {'attr': {
+                'class': 'custom-file-input',
+                'placeholder': 'Fichier joint'
+                }
+              }
+            )
+          }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {# Submit button #}
+  <div class="form-row">
+    <div class="form-group col-12 mb-0">
+      <button class="btn btn-primary" type="submit">
+        Create Article
+      </button>
+    </div>
+  </div>
+{{ form_end(form) }}
+<!-- End FORM -->

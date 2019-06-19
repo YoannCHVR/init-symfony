@@ -3,7 +3,7 @@
 
 {# Title Page #}
 {% block title %}
-  Contactez-nous
+  Article
 {% endblock %}
 
 {# CSS : Individual Page #}
@@ -37,13 +37,12 @@
 <main>
   <!-- News section -->
   <div class="container py-section">
-    {{ 'symfony.great'|trans }}
     {% for article in articles %}
       <!-- Article -->
       <div class="row article-container">
         <!-- Article image -->
         <div class="col-10 col-md-4 mx-auto">
-          <img class="w-100 imgscale" src="{{ asset('assets/img/articles/' ~ article.image) }}" alt="">
+          <img class="w-100 imgscale" src="{{ asset('uploads/article/image/' ~ article.image) }}" alt="">
         </div>
 
         <!-- Article informations -->
@@ -57,6 +56,10 @@
             <!-- Article synop. -->
             <p class="mt-3" align="justify">
               {{ article.content }}
+              <br><br>
+              {% if article.file %}
+                <a href="{{ asset('uploads/article/file/' ~ article.file) }}">Plus d'informations</a>
+              {% endif %}
             </p>
           </div>
 
