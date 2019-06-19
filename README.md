@@ -74,6 +74,8 @@
   ```
   php bin/console translation:update --dump-messages --force en
   ```
+  > un clear du cache peut-être aussi nécessaire si le nettoyage
+  > du cache précédent pour les traductions ne suffit pas.
   
 ## Symfony:
 ### Commandes:
@@ -340,5 +342,3 @@
   
   > Note: Si les traductions ne prennent pas effet, nettoyer le cache de Symfony,
   > ainsi que des messages avec les commandes [ci-dessus](https://github.com/YoannCHVR/init-symfony/blob/master/README.md#a-savoir).
-  
-## VueJS:
