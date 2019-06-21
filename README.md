@@ -15,7 +15,7 @@
       git clone le_lien_du_repo_du_projet
       ```
     * vous allez avoir un nouveau fichier qui va apparaître dans le fichier où vous avez exécutée la commande.
-    * dans ce dossier, il y a un fichier .env.exemple. Créer un nouveau fichier .env t copier y le contenu du .env.exemple.
+    * dans ce dossier, il y a un fichier .env.exemple. Créer un nouveau fichier .env et copier y le contenu du .env.exemple.
     * changer ensuite les lignes suivantes avec vos identifiants de base de données:
       ```
       DATABASE_URL=mysql://username:password@127.0.0.1:3306/database
@@ -31,7 +31,7 @@
       ```
     * vous pouvez maintenant lancer votre serveur, et développer !
       ```
-      php bin/console serveur:run
+      php bin/console server:run
       ```
       
 ### Utilisation récurrente:
@@ -51,7 +51,7 @@
       ```
     * enfin, vous pouvez reprendre le développement !
       ```
-      php bin/console serveur:run
+      php bin/console server:run
       ```
       
 ### A savoir:
