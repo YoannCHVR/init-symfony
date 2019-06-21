@@ -107,21 +107,10 @@
             </a>
           </li>
 
-          {% if not app.user %}
-
-            <!-- Client login -->
-            <li class="list-unstyled">
-              <a class="btn btn-secondary px-4 py-2" href="{{ path('app_login') }}">Connexion</a>
-            </li>
-
-          {% else %}
-
-            <!-- Client logout -->
-            <li class="list-unstyled">
-              <a class="btn btn-secondary px-4 py-2" href="{{ path('app_logout') }}">Deconnexion</a>
-            </li>
-
-          {% endif %}
+          <!-- Client login -->
+          <li class="list-unstyled">
+            <a class="btn btn-secondary px-4 py-2" href="https://www.clients.kipers-industries.com/connexion.php">Connexion</a>
+          </li>
 
           {% if app.request.locale == "fr" %}
 
@@ -314,7 +303,21 @@
         <!-- All right reserved -->
         <div class="row mt-5">
           <p class="w-100 text-center text-white mb-1">
-            &copy; Kipers Industries 2019. Tous droits réservés.
+            {% if not app.user %}
+
+              <!-- Admin login -->
+              <a class="text-light nounderline cursor-default" href="{{ path('app_login') }}">
+                &copy; Kipers Industries 2019. Tous droits réservés.
+              </a>
+
+            {% else %}
+
+              <!-- Admin logout -->
+              <a class="text-light nounderline cursor-default" href="{{ path('app_logout') }}">
+                &copy; Kipers Industries 2019. Tous droits réservés | Deconnexion
+              </a>
+
+            {% endif %}
           </p>
         </div>
 

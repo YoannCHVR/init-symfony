@@ -203,7 +203,16 @@
 
         <div class="col-12 col-md-10 col-lg-8 col-xl-6 mx-auto mx-xl-0 text-center my-5 my-lg-0">
           <a href="#bg-pdf">
-            <img class="w-50" src="{{ asset('assets/img/icons/Sauv-PDF.png') }}" alt=""/></a>
+            {% if app.request.locale == "fr" %}
+
+              <img class="w-50" src="{{ asset('assets/img/icons/Sauv-PDF-fr.png') }}" alt="" />
+
+            {% else %}
+
+              <img class="w-50" src="{{ asset('assets/img/icons/Sauv-PDF-en.png') }}" alt="" />
+
+            {% endif %}
+          </a>
         </div>
 
         <div class="col-12 col-md-10 col-lg-8 col-xl-6 mx-auto mx-xl-0 text-center">
