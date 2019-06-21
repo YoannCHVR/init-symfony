@@ -8,18 +8,18 @@
 
 {# CSS : Individual Page #}
 {% block stylesheets %}
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 {% endblock %}
 
 {# JS : Individual Page #}
 {% block javascripts %}
-<script type="text/javascript">
-  var onloadCallback = function() {
-    grecaptcha.render('google_captcha', {
-      'sitekey' : '6Lf2G6QUAAAAAA1E5ns9TKaML0ViZJJe9gOF7ywq'
-    });
-  };
-</script>
+  <script type="text/javascript">
+    var onloadCallback = function() {
+      grecaptcha.render('google_captcha', {
+        'sitekey' : '6Lf2G6QUAAAAAA1E5ns9TKaML0ViZJJe9gOF7ywq'
+      });
+    };
+  </script>
 {% endblock %}
 
 {# BODY : Individual Page #}

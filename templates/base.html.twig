@@ -11,22 +11,23 @@
     <!-- LOGO ICON -->
     <link rel="icon" href="{{ asset('assets/img/logos/logo-ico.png') }}">
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.css') }}">
     <!-- CSS : Individual Page -->
     {% block stylesheets %}{% endblock %}
     <!-- CSS : Cookie Consent -->
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/cookieconsent.min.css') }}"/>
     <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="{{ asset('assets/js/jquery-3.4.1.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plotly-latest.min.js') }}"></script>
     <!-- JS : Translation -->
     <script src="{{ asset('bundles/bazingajstranslation/js/translator.min.js') }}"></script>
     <script src="{{ url('bazinga_jstranslation_js', { 'locales': 'fr,en' }) }}"></script>
     <!-- JS : Individual Page -->
     {% block javascripts %}{% endblock %}
     <!-- JS : Cookie Consent -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+    <script src="{{ asset('assets/js/cookieconsent.min.js') }}"></script>
     <script>
       window.addEventListener("load", function() {
         window.cookieconsent.initialise({

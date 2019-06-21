@@ -1,7 +1,4 @@
-var doc = new jsPDF();
-var formData = new FormData();
-
-console.log(Translator.locale);
+//console.log(Translator.locale); <-- voir si la traduction marche
 
 Vue.component("reactive-stacked-bar-chart", {
   props: ["stack_bar_chart"],
