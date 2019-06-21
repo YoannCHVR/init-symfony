@@ -27,14 +27,29 @@ class Article
     private $Title;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
-    private $Synopsis;
+    private $Content;
 
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $Content;
+    private $MoreContent;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $TitleEN;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $ContentEN;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $MoreContentEN;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -51,6 +66,11 @@ class Article
      * @ORM\JoinColumn(nullable=false)
      */
     private $Author;
+
+    /**
+     * @ORM\Column(type="smallint", nullable=true)
+     */
+    private $Priority;
 
     public function getId(): ?int
     {
@@ -81,26 +101,62 @@ class Article
         return $this;
     }
 
-    public function getSynopsis(): ?string
-    {
-        return $this->Synopsis;
-    }
-
-    public function setSynopsis(string $Synopsis): self
-    {
-        $this->Synopsis = $Synopsis;
-
-        return $this;
-    }
-
     public function getContent(): ?string
     {
         return $this->Content;
     }
 
-    public function setContent(?string $Content): self
+    public function setContent(string $Content): self
     {
         $this->Content = $Content;
+
+        return $this;
+    }
+
+    public function getMoreContent(): ?string
+    {
+        return $this->MoreContent;
+    }
+
+    public function setMoreContent(?string $MoreContent): self
+    {
+        $this->MoreContent = $MoreContent;
+
+        return $this;
+    }
+
+    public function getTitleEN(): ?string
+    {
+        return $this->TitleEN;
+    }
+
+    public function setTitleEN(string $TitleEN): self
+    {
+        $this->TitleEN = $TitleEN;
+
+        return $this;
+    }
+
+    public function getContentEN(): ?string
+    {
+        return $this->ContentEN;
+    }
+
+    public function setContentEN(string $ContentEN): self
+    {
+        $this->ContentEN = $ContentEN;
+
+        return $this;
+    }
+
+    public function getMoreContentEN(): ?string
+    {
+        return $this->MoreContentEN;
+    }
+
+    public function setMoreContentEN(?string $MoreContentEN): self
+    {
+        $this->MoreContentEN = $MoreContentEN;
 
         return $this;
     }
@@ -137,6 +193,18 @@ class Article
     public function setAuthor(User $Author): self
     {
         $this->Author = $Author;
+
+        return $this;
+    }
+
+    public function getPriority(): ?int
+    {
+        return $this->Priority;
+    }
+
+    public function setPriority(?int $Priority): self
+    {
+        $this->Priority = $Priority;
 
         return $this;
     }

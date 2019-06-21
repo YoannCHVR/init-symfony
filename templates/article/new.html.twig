@@ -26,8 +26,33 @@
   <!-- End Header -->
 
   <main>
+    <div class="container pt-5 pb-3">
+      <h1>Aperçu des articles déjà en ligne</h1>
+      <br>
+      <ul>
+        {% if priority_articles %}
+          {% for article in priority_articles %}
+            {% if article %}
+
+              <li>Position {{ loop.index}}: {{ article.title }}.</li>
+
+            {% else %}
+
+              <li>Position {{ loop.index}}: Pas d'article.</li>
+
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          {% for i in range(0, 3) %}
+
+              <li>Position {{ loop.index}}: Pas d'article.</li>
+
+          {% endfor %}
+        {% endif %}
+      </ul>
+    </div>
     <!-- Article section -->
-    <div class="container py-section">
+    <div class="container pt-3 pb-5">
       <!--FORM-->
       {{ include('article/_form.html.twig') }}
       <!--End FORM-->

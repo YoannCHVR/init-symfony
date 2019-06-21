@@ -21,7 +21,7 @@ class ArticleController extends AbstractController
         $em = $this->getDoctrine()->getManager();
 
         $articles = $em->getRepository(Article::class)->findBy(
-          [],
+          [], //obligatoire pour afficher de la base de données en ASC ou DESC
           ['PublishedAt'=> 'DESC']
         );
 
@@ -37,11 +37,24 @@ class ArticleController extends AbstractController
     {
         $article = new Article();
         $currentDate = new \DateTime();
+        $sessionUser = $this->getUser();
 
         $em = $this->getDoctrine()->getManager();
+
         $author = $em->getRepository(User::class)->findOneBy([
-          'id' => 1
+          'id' => $sessionUser,
+          'admin' => 1
         ]);
+
+        $priority_articles = [];
+
+        for ($i = 1; $i <= 3; $i++) {
+          $priority_article = $em->getRepository(Article::class)->findOneBy(
+            ['Priority' => $i]
+          );
+
+          array_push($priority_articles, $priority_article);
+        }
 
         // Create form
         $form = $this->createForm(ArticleType::class, $article);
@@ -51,6 +64,18 @@ class ArticleController extends AbstractController
 
         // After Submit and Valid form
         if ($form->isSubmitted() && $form->isValid()) {
+          $priority = $form->get('priority')->getData();
+
+          $already_took_priority = $em->getRepository(Article::class)->findOneBy(
+            ['Priority' => $priority]
+          );
+
+          if ($already_took_priority) {
+            $already_took_priority->setPriority(NULL);
+
+            $em->persist($already_took_priority);
+          }
+
           $article->setAuthor($author);
 
           // Get Image in file type
@@ -67,8 +92,6 @@ class ArticleController extends AbstractController
 
           // Get File in file type
           $fileArticle = $form->get('file')->getData();
-
-          echo $fileArticle;
 
           if ( $fileArticle ) {
             // Generate name file and add extension
@@ -90,6 +113,7 @@ class ArticleController extends AbstractController
 
         return $this->render('article/new.html.twig', [
             'form' => $form->createView(),
+            'priority_articles' => $priority_articles
         ]);
     }
 }

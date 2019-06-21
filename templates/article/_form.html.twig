@@ -8,6 +8,33 @@
     })
 }}
 
+  <!-- priority -->
+  <div class="form-row">
+    <!-- priority section -->
+    <div class="form-group col-12">
+      <!-- priority -->
+      {# priority label #}
+      {{ form_label(form.priority,
+          'Priorité de l\'article',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed priority errors #}
+      {{ form_errors(form.priority) }}
+      {# priority Input #}
+      {{ form_widget(form.priority,
+          {'attr': {
+            'class': 'form-control'
+            }
+          }
+        )
+      }}
+    </div>
+  </div>
+
   <!-- title -->
   <div class="form-row">
     <!-- title section -->
@@ -36,38 +63,13 @@
     </div>
   </div>
 
-  <!-- synopsis & COMPANY -->
+  <!-- content & COMPANY -->
   <div class="form-row">
-    <!-- synopsis section -->
-    <div class="form-group col-md-6">
-      {# synopsis label #}
-      {{ form_label(form.synopsis,
-          'Synopsis *',
-          {'label_attr': {
-            'class': ''
-            }
-          }
-        )
-      }}
-      {# Displayed synopsis errors #}
-      {{ form_errors(form.synopsis) }}
-      {# synopsis Input #}
-      {{ form_widget(form.synopsis,
-          {'attr': {
-            'class': 'form-control',
-            'placeholder': 'Synopsis'
-            }
-          }
-        )
-      }}
-    </div>
-
     <!-- content section -->
     <div class="form-group col-md-6">
-      <!-- content -->
       {# content label #}
       {{ form_label(form.content,
-          'Contenu',
+          'Contenu *',
           {'label_attr': {
             'class': ''
             }
@@ -86,7 +88,116 @@
         )
       }}
     </div>
+
+    <!-- moreContent section -->
+    <div class="form-group col-md-6">
+      <!-- moreContent -->
+      {# moreContent label #}
+      {{ form_label(form.moreContent,
+          'Plus de contenu',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed moreContent errors #}
+      {{ form_errors(form.moreContent) }}
+      {# moreContent Input #}
+      {{ form_widget(form.moreContent,
+          {'attr': {
+            'class': 'form-control',
+            'placeholder': 'Plus de contenu'
+            }
+          }
+        )
+      }}
+    </div>
   </div>
+
+  <hr>
+
+  <!-- titleEN -->
+  <div class="form-row">
+    <!-- titleEN section -->
+    <div class="form-group col-12">
+      <!-- titleEN -->
+      {# titleEN label #}
+      {{ form_label(form.titleEN,
+          'Titre (Anglais) *',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed titleEN errors #}
+      {{ form_errors(form.titleEN) }}
+      {# titleEN Input #}
+      {{ form_widget(form.titleEN,
+          {'attr': {
+            'class': 'form-control',
+            'placeholder': 'Titre (Anglais)'
+            }
+          }
+        )
+      }}
+    </div>
+  </div>
+
+  <!-- contentEN & COMPANY -->
+  <div class="form-row">
+    <!-- contentEN section -->
+    <div class="form-group col-md-6">
+      {# contentEN label #}
+      {{ form_label(form.contentEN,
+          'Contenu (Anglais) *',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed contentEN errors #}
+      {{ form_errors(form.contentEN) }}
+      {# contentEN Input #}
+      {{ form_widget(form.contentEN,
+          {'attr': {
+            'class': 'form-control',
+            'placeholder': 'Contenu (Anglais)'
+            }
+          }
+        )
+      }}
+    </div>
+
+    <!-- moreContentEN section -->
+    <div class="form-group col-md-6">
+      <!-- moreContentEN -->
+      {# moreContentEN label #}
+      {{ form_label(form.moreContentEN,
+          'Plus de contenu (Anglais)',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed moreContentEN errors #}
+      {{ form_errors(form.moreContentEN) }}
+      {# moreContentEN Input #}
+      {{ form_widget(form.moreContentEN,
+          {'attr': {
+            'class': 'form-control',
+            'placeholder': 'Plus de contenu (Anglais)'
+            }
+          }
+        )
+      }}
+    </div>
+  </div>
+
+  <hr>
 
   <!-- image & File -->
   <div class="form-row">
@@ -167,7 +278,7 @@
   </div>
 
   {# Submit button #}
-  <div class="form-row">
+  <div class="form-row mt-3">
     <div class="form-group col-12 mb-0">
       <button class="btn btn-primary" type="submit">
         Create Article

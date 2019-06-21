@@ -50,12 +50,25 @@
           <div>
             <!-- Article title and link -->
             <h6 class="title-3 color-2">
-              {{ article.title }}
+              {# Displayed for FR website #}
+              {% if app.request.locale == 'fr' %}
+                {{ article.title }}
+                {# Displayed for EN website #}
+              {% else %}
+                {{ article.titleEN }}
+              {% endif %}
             </h6>
 
             <!-- Article synop. -->
             <p class="mt-3" align="justify">
-              {{ article.content }}
+              {% if app.request.locale == 'fr' %}
+                {# Displayed for FR website #}
+                {{ article.content }}
+              {% else %}
+                {# Displayed for EN website #}
+                {{ article.contentEN }}
+              {% endif %}
+
               <br><br>
               {% if article.file %}
                 <a href="{{ asset('uploads/article/file/' ~ article.file) }}">Plus d'informations</a>

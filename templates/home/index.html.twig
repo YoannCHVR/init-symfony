@@ -291,12 +291,18 @@
             <a href="{{ path('article_list') }}">
               <div class="article mb-4">
                 <!-- Article image -->
-                <img class="w-100 imgscale" src="{{ asset('assets/img/articles/' ~ article.image) }}" alt="">
+                <img class="w-100 imgscale" src="{{ asset('uploads/article/image/' ~ article.image) }}" alt="">
                 <!-- Article informations -->
                 <div class="p-3">
                   <!-- Article image -->
                   <h5 class="title-3 color-2">
-                    {{ article.title }}
+                    {# Displayed for FR website #}
+                    {% if app.request.locale == 'fr' %}
+                      {{ article.title }}
+                      {# Displayed for EN website #}
+                    {% else %}
+                      {{ article.titleEN }}
+                    {% endif %}
                   </h5>
                 </div>
               </div>
