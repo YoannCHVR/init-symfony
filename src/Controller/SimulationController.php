@@ -422,7 +422,6 @@ class SimulationController extends AbstractController
           $email->IsHTML(true);
           $email->Encoding = 'quoted-printable';
           // Ajout du PDF dans le mail
-          echo $translator->trans('simulation.pdf.file.name');
           $email->AddAttachment( $file_to_attach . $fname, 'Kipers Industries - ' . $translator->trans('simulation.pdf.file.name') . $extension);
           // Ajout des images pour la signature
           $email->AddEmbeddedImage('assets/img/signature/kipers.png', 'kipers_logo');

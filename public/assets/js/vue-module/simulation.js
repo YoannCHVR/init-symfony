@@ -470,7 +470,7 @@ const simulation = new Vue({
       $('input#simulation_anonymeEmail').val(this.anonymeEmail);
       $('input#simulation_anonymeCompany').val(this.anonymeCompany);
 
-      $('form#test').submit();
+      $('form').submit();
     }
   },
   computed: {
