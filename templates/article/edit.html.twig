@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Edit article
+{% endblock %}
+
+{% block body %}
+
+  <!-- Header with background image -->
+  <header id="bg-about" class="bg-section container-fluid">
+    <div class="row">
+      <!-- Content -->
+      <div class="container py-header-section">
+        <div class="row">
+          <!-- Responsive col -->
+          <div class="col-10 col-lg-8 mx-auto ">
+            <!-- Header text -->
+            <p class="bg-title text-center text-white">
+              Modifier un nouvel article
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <main>
+    <div class="container pt-5 pb-3">
+      <h1>Aperçu des articles déjà en ligne</h1>
+      <br>
+      <ul>
+        {% if priority_articles %}
+          {% for article in priority_articles %}
+            {% if article %}
+
+              <li>Position {{ loop.index}}: {{ article.title }}.</li>
+
+            {% else %}
+
+              <li>Position {{ loop.index}}: Pas d'article.</li>
+
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          {% for i in range(0, 3) %}
+
+              <li>Position {{ loop.index}}: Pas d'article.</li>
+
+          {% endfor %}
+        {% endif %}
+      </ul>
+    </div>
+    <!-- Article section -->
+    <div class="container pt-3 pb-5">
+      <!--FORM-->
+      {{ include('article/_edit_form.html.twig') }}
+      <!--End FORM-->
+    </div>
+    <!-- End Article section -->
+  </main>
+{% endblock %}

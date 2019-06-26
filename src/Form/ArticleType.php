@@ -44,7 +44,7 @@ class ArticleType extends AbstractType
             ])
             // Image Field
              ->add('image', FileType::class, [
-               'required' => false,
+               'required' => true,
                'data_class' => null
              ])
             // File (attachment) Field

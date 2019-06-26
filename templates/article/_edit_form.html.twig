@@ -1,0 +1,294 @@
+{# templates/article/edit.html.twig #}
+
+<!-- FORM -->
+{{ form_start(form,
+    {'attr': {
+      'class': 'col-12'
+      }
+    })
+}}
+
+  <!-- priority -->
+  <div class="form-row">
+    <!-- priority section -->
+    <div class="form-group col-12">
+      <!-- priority -->
+      {# priority label #}
+      {{ form_label(form.priority,
+          'Priorité de l\'article',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed priority errors #}
+      {{ form_errors(form.priority) }}
+      {# priority Input #}
+      {{ form_widget(form.priority,
+          {'attr': {
+            'class': 'form-control'
+            }
+          }
+        )
+      }}
+    </div>
+  </div>
+
+  <!-- title -->
+  <div class="form-row">
+    <!-- title section -->
+    <div class="form-group col-12">
+      <!-- title -->
+      {# title label #}
+      {{ form_label(form.title,
+          'Titre *',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed title errors #}
+      {{ form_errors(form.title) }}
+      {# title Input #}
+      {{ form_widget(form.title,
+          {'attr': {
+            'class': 'form-control',
+            'placeholder': 'Titre'
+            }
+          }
+        )
+      }}
+    </div>
+  </div>
+
+  <!-- content & COMPANY -->
+  <div class="form-row">
+    <!-- content section -->
+    <div class="form-group col-md-6">
+      {# content label #}
+      {{ form_label(form.content,
+          'Contenu *',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed content errors #}
+      {{ form_errors(form.content) }}
+      {# content Input #}
+      {{ form_widget(form.content,
+          {'attr': {
+            'class': 'form-control',
+            'placeholder': 'Contenu'
+            }
+          }
+        )
+      }}
+    </div>
+
+    <!-- moreContent section -->
+    <div class="form-group col-md-6">
+      <!-- moreContent -->
+      {# moreContent label #}
+      {{ form_label(form.moreContent,
+          'Plus de contenu',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed moreContent errors #}
+      {{ form_errors(form.moreContent) }}
+      {# moreContent Input #}
+      {{ form_widget(form.moreContent,
+          {'attr': {
+            'class': 'form-control',
+            'placeholder': 'Plus de contenu'
+            }
+          }
+        )
+      }}
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- titleEN -->
+  <div class="form-row">
+    <!-- titleEN section -->
+    <div class="form-group col-12">
+      <!-- titleEN -->
+      {# titleEN label #}
+      {{ form_label(form.titleEN,
+          'Titre (Anglais) *',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed titleEN errors #}
+      {{ form_errors(form.titleEN) }}
+      {# titleEN Input #}
+      {{ form_widget(form.titleEN,
+          {'attr': {
+            'class': 'form-control',
+            'placeholder': 'Titre (Anglais)'
+            }
+          }
+        )
+      }}
+    </div>
+  </div>
+
+  <!-- contentEN & COMPANY -->
+  <div class="form-row">
+    <!-- contentEN section -->
+    <div class="form-group col-md-6">
+      {# contentEN label #}
+      {{ form_label(form.contentEN,
+          'Contenu (Anglais) *',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed contentEN errors #}
+      {{ form_errors(form.contentEN) }}
+      {# contentEN Input #}
+      {{ form_widget(form.contentEN,
+          {'attr': {
+            'class': 'form-control',
+            'placeholder': 'Contenu (Anglais)'
+            }
+          }
+        )
+      }}
+    </div>
+
+    <!-- moreContentEN section -->
+    <div class="form-group col-md-6">
+      <!-- moreContentEN -->
+      {# moreContentEN label #}
+      {{ form_label(form.moreContentEN,
+          'Plus de contenu (Anglais)',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed moreContentEN errors #}
+      {{ form_errors(form.moreContentEN) }}
+      {# moreContentEN Input #}
+      {{ form_widget(form.moreContentEN,
+          {'attr': {
+            'class': 'form-control',
+            'placeholder': 'Plus de contenu (Anglais)'
+            }
+          }
+        )
+      }}
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- image & File -->
+  <div class="form-row">
+    <!-- image section -->
+    <div class="form-group col-md-6">
+      {# image label #}
+      {{ form_label(form.image,
+          'Image',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed image errors #}
+      {{ form_errors(form.image) }}
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <!-- Before text -->
+          <span class="input-group-text">
+            Upload
+          </span>
+        </div>
+        <!-- File input -->
+        <div class="custom-file">
+          <label class="custom-file-label" for="file">
+            Choisir un fichier
+          </label>
+          {{ form_widget(form.image,
+              {'attr': {
+                'class': 'custom-file-input',
+                'placeholder': 'Image'
+                }
+              }
+            )
+          }}
+        </div>
+      </div>
+    </div>
+
+    <!-- File section -->
+    <div class="form-group col-md-6">
+      {# file label #}
+      {{ form_label(form.file,
+          'Fichier joint',
+          {'label_attr': {
+            'class': ''
+            }
+          }
+        )
+      }}
+      {# Displayed file errors #}
+      {{ form_errors(form.file) }}
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <!-- Before text -->
+          <span class="input-group-text">
+            Upload
+          </span>
+        </div>
+        <!-- File input -->
+        <div class="custom-file">
+          <label class="custom-file-label" for="file">
+            Choisir un fichier
+          </label>
+          {# file Input #}
+          {{ form_widget(form.file,
+              {'attr': {
+                'class': 'custom-file-input',
+                'placeholder': 'Fichier joint'
+                }
+              }
+            )
+          }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row mt-3">
+    <div class="form-group col-12 mb-0">
+      {# Back button #}
+      <a class="btn btn-primary" href="{{ path('article_list') }}">
+        Retour
+      </a>
+
+      {# Submit button #}
+      <button class="btn btn-primary" type="submit">
+        Modifier l'article
+      </button>
+    </div>
+  </div>
+{{ form_end(form) }}
+<!-- End FORM -->

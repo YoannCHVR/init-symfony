@@ -277,9 +277,14 @@
     </div>
   </div>
 
-  {# Submit button #}
   <div class="form-row mt-3">
     <div class="form-group col-12 mb-0">
+      {# Back button #}
+      <a class="btn btn-primary" href="{{ path('article_list') }}">
+        Retour
+      </a>
+
+      {# Submit button #}
       <button class="btn btn-primary" type="submit">
         Create Article
       </button>

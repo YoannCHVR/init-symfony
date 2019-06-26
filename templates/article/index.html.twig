@@ -76,10 +76,21 @@
             </p>
           </div>
 
-          <!-- Article Author -->
-          <span class="bg-secondary text-white p-2 mt-3">
-            {{ article.publishedAt|date("d/m/Y")  }}
-          </span>
+          <div class="row">
+            {% if app.user.admin %}
+              <!-- Article Edit -->
+              <a class="bg-secondary text-white p-2 mt-3 mx-3" href="{{ path('edit_article', {'id': article.id}) }}">
+                Modifier l'article
+              </a>
+            {% endif %}
+
+
+            <!-- Article Author -->
+            <span class="bg-secondary text-white p-2 mt-3">
+              {{ article.publishedAt|date("d/m/Y")  }}
+            </span>
+          </div>
+
         </div>
 
         <!-- Splitter -->

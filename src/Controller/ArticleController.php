@@ -8,6 +8,7 @@ use App\Entity\User;
 use App\Form\ArticleType;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -45,6 +46,12 @@ class ArticleController extends AbstractController
           'id' => $sessionUser,
           'admin' => 1
         ]);
+
+        // Check if current user is an admin
+        if ( !$author ) {
+          // Redirect to Home page
+          return $this->redirectToRoute('home');
+        }
 
         $priority_articles = [];
 
@@ -116,4 +123,102 @@ class ArticleController extends AbstractController
             'priority_articles' => $priority_articles
         ]);
     }
+
+    /**
+     * @Route("/article/edit/{id}", name="edit_article")
+     */
+    public function edit(
+      Request $request,
+      Article $article
+    )
+    {
+        // Init. variable
+        $em = $this->getDoctrine()->getManager();
+
+        $sessionUser = $this->getUser();
+
+        $author = $em->getRepository(User::class)->findOneBy([
+          'id' => $sessionUser,
+          'admin' => true
+        ]);
+
+        // Check if current user is an admin
+        if ( !$author ) {
+          // Redirect to Home page
+          return $this->redirectToRoute('home');
+        }
+
+        $priority_articles = [];
+
+        for ($i = 1; $i <= 3; $i++) {
+          $priority_article = $em->getRepository(Article::class)->findOneBy(
+            ['Priority' => $i]
+          );
+
+          array_push($priority_articles, $priority_article);
+        }
+
+        // Set article's image/file in a var to get it later if the field isn't changed
+        $image = $article->getImage();
+        $file = $article->getFile();
+
+        // Create form
+        $form = $this->createForm(ArticleType::class, $article);
+
+        // Reset image field on required false when edit
+        $form->add('image', FileType::class, [
+          'required' => false,
+          'data_class' => null
+        ]);
+
+        // Create request
+        $form->handleRequest($request);
+
+        // After Submit and Valid form
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            // Get Image in file type
+            $imageArticle = $form->get('image')->getData();
+
+            if ( !$imageArticle ) {
+              // Add it for database
+              $article->setImage($image);
+            } else {
+              // Generate name file and add extension
+              $imageName = md5(uniqid()) .'.' . $imageArticle->guessExtension();
+              // Makes image in your public folder
+              $imageArticle->move($this->getParameter('image_article_upload_path'), $imageName);
+              // Add it for database
+              $article->setImage($imageName);
+            }
+
+            // Get File in file type
+            $fileArticle = $form->get('file')->getData();
+
+            if ( !$fileArticle ) {
+              // Add it for database
+              $article->setFile($file);
+            } else {
+              // Generate name file and add extension
+              $fileName = md5(uniqid()) .'.' . $fileArticle->guessExtension();
+              // Makes image in your public folder
+              $fileArticle->move($this->getParameter('file_article_upload_path'), $fileName);
+              // Add it for database
+              $article->setFile($fileName);
+            }
+
+            $em->flush();
+
+
+            // Redirect to Show mission
+            return $this->redirectToRoute('article_list');
+        }
+
+        // Render page Mission Edit
+        return $this->render('article/edit.html.twig', [
+            'form' => $form->createView(),
+            'priority_articles' => $priority_articles
+        ]);
+    }
+
 }
