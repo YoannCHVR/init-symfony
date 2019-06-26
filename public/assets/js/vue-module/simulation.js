@@ -109,7 +109,7 @@ const simulation = new Vue({
       uuid: "123",
       traces: [{
           y: [],
-          name: Translator.trans('simulation.index.charts.chart1.legend.item1'),
+          name: Translator.trans('simulation.index.charts.chart1.legend.item5'),
           orientation: 'v',
           text: [],
           textposition: 'auto',
@@ -121,7 +121,7 @@ const simulation = new Vue({
         },
         {
           y: [],
-          name: Translator.trans('simulation.index.charts.chart1.legend.item2'),
+          name: Translator.trans('simulation.index.charts.chart1.legend.item4'),
           orientation: 'v',
           text: [],
           textposition: 'auto',
@@ -145,7 +145,7 @@ const simulation = new Vue({
         },
         {
           y: [],
-          name: Translator.trans('simulation.index.charts.chart1.legend.item4'),
+          name: Translator.trans('simulation.index.charts.chart1.legend.item2'),
           orientation: 'v',
           text: [],
           textposition: 'auto',
@@ -157,7 +157,7 @@ const simulation = new Vue({
         },
         {
           y: [],
-          name: Translator.trans('simulation.index.charts.chart1.legend.item5'),
+          name: Translator.trans('simulation.index.charts.chart1.legend.item1'),
           orientation: 'v',
           text: [],
           textposition: 'auto',
